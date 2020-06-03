@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5bc1c47b-2021-4e3e-b922-0747619881c2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1bRYOYETJ8Y2jWkxVpXvRbHiW8x" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bc1c47b-2021-4e3e-b922-0747619881c2" name="Default Changelist" comment="" />
+      <created>1588596341080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588596341080</updated>
+      <workItem from="1588596342614" duration="17254000" />
+      <workItem from="1588681253398" duration="19843000" />
+      <workItem from="1588755440869" duration="24196000" />
+      <workItem from="1589808266856" duration="6840000" />
+      <workItem from="1589888425175" duration="2069000" />
+      <workItem from="1591226288385" duration="223000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Deployment" timestamp="1588596474515">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1588596474515" />
+    <state x="440" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589808587623">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="440" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1589808587623" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1588703707041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1588703707041" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591226506050">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591226506050" />
+    <state x="568" y="94" key="ftp.server.browser" timestamp="1588596470970">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="568" y="94" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1588596470970" />
+  </component>
+</project>
