@@ -1,8 +1,7 @@
 <?php
-session_start();
-$_SESSION['current_page'] = 'index.php';
 include 'localization.php';
 include 'config.php';
+$_SESSION['current_page'] = 'index.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +18,10 @@ include 'config.php';
 <body>
 <?php include 'navbar.php'?>
 <form action="" method="post">
-    <label for="inputName">Zadaj meno skriptu (lietadlo, gulicka, kyvadlo, tlmenie): </label>
+    <label for="inputName"><?php echo $name_text ?></label>
     <input type="text" name="inputName" id="inputName" placeholder="Name">
 
-    <label for="inputParameter">Zadaj parameter: </label>
+    <label for="inputParameter"><?php echo $parameter_text ?></label>
     <input type="number" name="inputParameter" id="inputParameter" placeholder="Parameter">
 
     <input type="button" value="Submit" id="submit">
@@ -38,6 +37,7 @@ include 'config.php';
                     var inputParameter = document.getElementById("inputParameter").value;
 
                     var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=" + inputName + "&parameter=" + inputParameter;
+
                     console.log(url);
                     $.getJSON(url, function (data) {
                         console.log(data);

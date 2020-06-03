@@ -1,8 +1,7 @@
 <?php
-session_start();
-$_SESSION['current_page'] = 'aeroplane.php';
 include 'localization.php';
 include 'config.php';
+$_SESSION['current_page'] = 'aeroplane.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
