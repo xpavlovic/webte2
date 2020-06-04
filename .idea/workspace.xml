@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bc1c47b-2021-4e3e-b922-0747619881c2" name="Default Changelist" comment="" />
+    <list default="true" id="5bc1c47b-2021-4e3e-b922-0747619881c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aeroplane.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ball.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dampening.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/localization.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/navbar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pendulum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +26,11 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bRYOYETJ8Y2jWkxVpXvRbHiW8x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -20,6 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -42,7 +61,9 @@
       <workItem from="1588755440869" duration="24196000" />
       <workItem from="1589808266856" duration="6840000" />
       <workItem from="1589888425175" duration="2069000" />
-      <workItem from="1591226288385" duration="223000" />
+      <workItem from="1591226288385" duration="821000" />
+      <workItem from="1591230486401" duration="866000" />
+      <workItem from="1591231412025" duration="39000" />
     </task>
     <servers />
   </component>
@@ -62,10 +83,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1588703707041" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591226506050">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1591231418598">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591226506050" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591231418598" />
     <state x="568" y="94" key="ftp.server.browser" timestamp="1588596470970">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

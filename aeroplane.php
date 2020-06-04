@@ -1,7 +1,7 @@
 <?php
 include 'localization.php';
 include 'config.php';
-$_SESSION['current_page'] = 'index.php';
+$_SESSION['current_page'] = 'aeroplane.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,38 +17,6 @@ $_SESSION['current_page'] = 'index.php';
 </head>
 <body>
 <?php include 'navbar.php'?>
-<form action="" method="post">
-    <label for="inputName"><?php echo $name_text ?></label>
-    <input type="text" name="inputName" id="inputName" placeholder="Name">
 
-    <label for="inputParameter"><?php echo $parameter_text ?></label>
-    <input type="number" name="inputParameter" id="inputParameter" placeholder="Parameter">
-
-    <input type="button" value="Submit" id="submit">
-
-</form>
-<script>
-    $(document).ready(
-        function()
-        {
-            $("#submit").click(
-                function() {
-                    var inputName = document.getElementById("inputName").value;
-                    var inputParameter = document.getElementById("inputParameter").value;
-
-                    var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=" + inputName + "&parameter=" + inputParameter;
-
-                    console.log(url);
-                    $.getJSON(url, function (data) {
-                        console.log(data);
-
-                    });
-                });
-        }
-    );
-</script>
 </body>
 </html>
-<?php
-
-//>>>>>>> cc0d3a68f788ddc7091e0ba0c26544bf98ae4200
