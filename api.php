@@ -2,18 +2,9 @@
 include 'config.php';
 
 if (isset($_GET['search'])) {
-    if ($_GET['search'] == "scripts") {
-        $conn = new mysqli($servername, $username, $password);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        //$sql = "SELECT * FROM api WHERE api_key='$api_key'";
-        //$result = $conn->query($sql);
-        //if ($result->num_rows > 0) {
-        $get_api_key = $_GET['key'];
-        if ($get_api_key == $api_key) {
-            if ((isset($_GET['scripts']) && $_GET['scripts'] != "") && ((isset($_GET['parameter']) && $_GET['parameter'] != ""))) {
-
+    if ($_GET['search'] == "scripts"){
+        if ($_GET['key'] == $api_key) {
+            if (!empty($_GET['parameter']) && !empty($_GET['scripts'])) {
                 $script_name = $_GET['scripts'];
                 $parameter = $_GET['parameter'];
                 //echo "PARAMETER: ".$parameter.'\n';
@@ -24,12 +15,30 @@ if (isset($_GET['search'])) {
                 $stringJSON = '{"data":{"t":' . $op[0] . ', "y":' . $op[1] . ', "x":' . $op[2] . '}}';
 
                 echo $stringJSON;
+            } elseif (empty($_GET['parameter']) && !empty($_GET['scripts'])) {
+                
+                $script_name = $_GET['scripts'];
+
+                //prikaz pre terminal
+                $cmd = "octave --eval '$script_name' ";
+                $output = exec($cmd, $op, $rv);
+
+                //data z octave scriptu
+                foreach($op as $line){
+                    echo $line . "<br>";
+                }
+            } else {
+                die("Incorrect request format");
             }
             //} else {
             // die("Invalid API key");
             //}
         }
+    } else {
+        die("Incorrect request format");
     }
-}else {
-    die("volaco robis zle");
+
+} else {
+    die("Incorrect request format");
 }
+
