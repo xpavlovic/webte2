@@ -6,7 +6,7 @@ function insert_page($page_name, $text)
     if ($_SESSION['current_page'] == $page_name) {
         echo
             '<li class="nav-item active">
-                            <a class="nav-link" href="index.php">' . $text . '<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="'.$page_name.'">' . $text . '<span class="sr-only">(current)</span></a>
              </li>';
     } else {
         echo
@@ -32,6 +32,12 @@ function insert_page($page_name, $text)
             insert_page('dampening.php', $dampening_menu_text);
             insert_page('ball.php', $ball_menu_text);
             insert_page('pendulum.php', $pendulum_menu_text);
+            //insert_page('info.php', $info_menu_text);
+            ?>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <?php
+            insert_page('info.php', $info_menu_text);
             ?>
         </ul>
         <?php if (isset($language_button)) echo $language_button;?>
