@@ -20,7 +20,6 @@ if (isset($_GET['search'])) {
                 //prikaz pre terminal
                 $cmd = "octave --eval 'r = $parameter;' --eval '$script_name' ";
                 $output = exec($cmd, $op, $rv);
-
                 //data z octave scriptu
                 $stringJSON = '{"data":{"t":' . $op[0] . ', "y":' . $op[1] . ', "x":' . $op[2] . '}}';
 
