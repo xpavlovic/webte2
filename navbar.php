@@ -18,7 +18,7 @@ function insert_page($page_name, $text)
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <span class="navbar-brand"><?php echo $title_text; ?></span>
+    <span class="navbar-brand"><?php if (isset($title_text)) echo $title_text; ?></span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@ function insert_page($page_name, $text)
             insert_page('pendulum.php', $pendulum_menu_text);
             ?>
         </ul>
-        <?php echo $language_button;?>
+        <?php if (isset($language_button)) echo $language_button;?>
     </div>
 </nav>
 <script>
