@@ -7,9 +7,11 @@ if (isset($_GET['search'])) {
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $sql = "SELECT * FROM api WHERE api_key='$api_key'";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
+        //$sql = "SELECT * FROM api WHERE api_key='$api_key'";
+        //$result = $conn->query($sql);
+        //if ($result->num_rows > 0) {
+        $get_api_key = $_GET['key'];
+        if ($get_api_key == $api_key) {
             if ((isset($_GET['scripts']) && $_GET['scripts'] != "") && ((isset($_GET['parameter']) && $_GET['parameter'] != ""))) {
                 $script_name = $_GET['scripts'];
                 $parameter = $_GET['parameter'];
@@ -29,5 +31,4 @@ if (isset($_GET['search'])) {
     }
 } else {
     die("volaco robis zle");
-    //cc0d3a68f788ddc7091e0ba0c26544bf98ae4200
 }
