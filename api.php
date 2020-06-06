@@ -23,7 +23,7 @@ if (isset($_GET['search'])) {
 
                 //data z octave scriptu
                 foreach($op as $line){
-                    echo $line . "<br>";
+                    echo $line . "\n";
                 }
             } else {
                 die("Incorrect request format");

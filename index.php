@@ -22,19 +22,23 @@ set_error_handler("var_dump");*/
 </head>
 <body>
 <?php include 'navbar.php'?>
-<form action="" method="post">
-
-    <label for="apiKey">API Key</label>
-    <input type="text" name="apiKey" id="apiKey" placeholder="API Key">
-    <br>
-    <label for="inputName"><?php if (isset($name_text)) echo $name_text?></label>
-    <input type="text" name="inputName" id="inputName" placeholder="Name">
-
-    <label for="inputParameter"><?php if (isset($parameter_text)) echo $parameter_text?></label>
-    <input type="number" name="inputParameter" id="inputParameter" placeholder="Parameter">
-
-    <input type="button" value="Submit" id="submit">
-
+<form class="mt-5 col-lg-12 d-flex justify-content-center">
+    <div class="col-lg-5">
+        <div class="form-group">
+            <label for="apiKey"><?php if (isset($api_key_text)) echo $api_key_text?></label>
+            <input class="form-control" type="text" name="apiKey" id="apiKey" value="99cf0f8b-8b17-4a1b-93e7-be2efaec965e">
+        </div>
+        <div class="form-group">
+            <label for="inputName"><?php if (isset($input_text)) echo $input_text?></label>
+            <textarea class="form-control" name="inputName" id="inputName"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="output"><?php if (isset($output_text)) echo $output_text?></label>
+            <textarea class="form-control" name="output" id="output" rows="5" disabled></textarea>
+        </div>
+        <button id="submit" type="button" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button?></button>
+    </div>
 </form>
+
 </body>
 </html>

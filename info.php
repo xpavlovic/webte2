@@ -18,7 +18,18 @@ $_SESSION['current_page'] = 'info.php';
 <body>
 <?php include 'navbar.php'?>
 <div class="about p-3"><?php if (isset($api_info)) echo $api_info; ?></div>
-<a href="pdf.php" class="p-3"><?php if (isset($pdf_text)) echo $pdf_text; ?></a>
+
+<form method="post" action="pdf.php" class="p-3">
+    <input type="submit" name="export" value="<?php if (isset($pdf_text)) echo $pdf_text; ?>" class="btn btn-dark" />
+</form>
+
+<form method="post" action="databaseToPDF.php" class="p-3">
+    <input type="submit" name="export" value="<?php if (isset($database_pdf_text)) echo $database_pdf_text; ?>" class="btn btn-dark" />
+</form>
+
+<form method="post" action="databaseToCSV.php" class="p-3">
+    <input type="submit" name="export" value="<?php if (isset($database_csv_text)) echo $database_csv_text; ?>" class="btn btn-dark" />
+</form>
 
 <div class="w-75 p-3 table-responsive">
     <caption><?php if (isset($table_caption)) echo $table_caption; ?></caption>
