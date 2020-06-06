@@ -9,8 +9,14 @@ if ($_COOKIE['lang'] == 'EN') {
     $pendulum_menu_text = 'Pendulum';
     $info_menu_text = 'About';
     $language_button = '<input onclick="change_language(\'SK\')" class="lang_input" type="image" width="40px" src="https://www.countryflags.io/sk/shiny/64.png" value="SK"/>';
-    $name_text = "Enter a script name (aeroplane, dampening, ball, pendulum): ";
-    $parameter_text = "Enter a parameter: ";
+
+    //index formular
+    $input_text = "Input:";
+    $output_text = "Output:";
+    $submit_button = "Submit";
+    $api_key_text = "API key";
+
+    //API popis
     $api_info = "About API: ";
     $pdf_text = "Download as PDF";
     $table_caption = "Tasks";
@@ -25,8 +31,14 @@ if ($_COOKIE['lang'] == 'EN') {
     $pendulum_menu_text = 'Kyvadlo';
     $info_menu_text = 'Popis';
     $language_button = '<input onclick="change_language(\'EN\')" class="lang_input" type="image" width="40px" src="https://www.countryflags.io/gb/shiny/64.png" value="EN"/>';
-    $name_text = "Zadaj meno skriptu (lietadlo, tlmenie, gulicka, kyvadlo): ";
-    $parameter_text = "Zadaj parameter: ";
+
+    //index formular
+    $input_text = "Vstup:";
+    $output_text = "Výstup:";
+    $submit_button = "Odoslať";
+    $api_key_text = "API kľúč";
+
+    //API popis
     $api_info = "Popis API: ";
     $pdf_text = "Stiahni ako PDF";
     $table_caption = "Rozdelenie úloh";
