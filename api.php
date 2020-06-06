@@ -9,7 +9,7 @@ if (isset($_GET['search'])) {
                 $parameter = $_GET['parameter'];
 
                 //prikaz pre terminal
-                $cmd = "octave --eval 'p = $parameter;' --eval '$script_name' ";
+                $cmd = "octave --eval 'p = $parameter;' --eval '$script_name' 2>&1";
                 $output = exec($cmd, $op, $rv);
 
                 //data z octave scriptu
@@ -20,7 +20,7 @@ if (isset($_GET['search'])) {
                 $script_name = $_GET['scripts'];
 
                 //prikaz pre terminal
-                $cmd = "octave --eval '$script_name' ";
+                $cmd = "octave --eval '$script_name' 2>&1";
                 $output = exec($cmd, $op, $rv);
 
                 //data z octave scriptu
