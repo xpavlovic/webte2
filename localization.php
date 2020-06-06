@@ -21,6 +21,8 @@ if ($_COOKIE['lang'] == 'EN') {
     $pdf_text = "Download as PDF";
     $table_caption = "Tasks";
     $table_name_task = "Name /<br> Task";
+    $database_pdf_text = "Export log info to PDF";
+    $database_csv_text = "Export log info to CSV";
 } else {
     //menu
     $title_text = 'Záverečný projekt';
@@ -43,4 +45,6 @@ if ($_COOKIE['lang'] == 'EN') {
     $pdf_text = "Stiahni ako PDF";
     $table_caption = "Rozdelenie úloh";
     $table_name_task = "Meno /<br> Uloha";
+    $database_pdf_text = "Exportuj logovacie info do PDF";
+    $database_csv_text = "Exportuj logovacie info do CSV";
 }
