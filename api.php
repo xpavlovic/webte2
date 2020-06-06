@@ -16,9 +16,7 @@ if (isset($_GET['search'])) {
 
                 echo $stringJSON;
             } elseif (empty($_GET['parameter']) && !empty($_GET['scripts'])) {
-                
                 $script_name = $_GET['scripts'];
-
                 //prikaz pre terminal
                 $cmd = "octave --eval '$script_name' ";
                 $output = exec($cmd, $op, $rv);
