@@ -1,0 +1,34 @@
+h1{
+    text-align: center;
+    margin-top: 10%;
+}
+h3{
+    text-align: center;
+    margin-top: 3%;
+}
+.textI{
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    width: 70%;
+}
+.v{
+    border: 1px solid rgba(171, 171, 171, 0.77);
+    border-radius: 15px;
+    background-color: rgba(201, 201, 201, 0.77);
+    padding: 2%;
+}
+.move{
+    margin-bottom: 5%;
+}
+
+.objekt{
+    width: 70%;
+    border: 1px solid rgba(71, 127, 177, 0.75);
+    border-radius: 15px;
+    background-color: rgba(77, 175, 229, 0.56);
+    margin-left: auto;
+    margin-right: auto;
+}

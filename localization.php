@@ -17,7 +17,7 @@ if ($_COOKIE['lang'] == 'EN') {
     $api_key_text = "API key";
 
     //API popis
-    $api_info = "About API: ";
+    $api_info = "<h1>About API</h1>";
     $pdf_text = "Download as PDF";
     $table_caption = "Tasks";
     $table_name_task = "Name /<br> Task";
@@ -41,7 +41,7 @@ if ($_COOKIE['lang'] == 'EN') {
     $api_key_text = "API kľúč";
 
     //API popis
-    $api_info = "Popis API: ";
+    $api_info = "<h1>Popis API</h1>";
     $pdf_text = "Stiahni ako PDF";
     $table_caption = "Rozdelenie úloh";
     $table_name_task = "Meno /<br> Uloha";
