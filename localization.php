@@ -15,7 +15,7 @@ if ($_COOKIE['lang'] == 'EN') {
     $output_text = "Output:";
     $submit_button = "Submit";
     $api_key_text = "API key";
-
+  
     //API popis
     $api_info = "About API: ";
     $pdf_text = "Download as PDF";

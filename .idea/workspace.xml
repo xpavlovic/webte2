@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bc1c47b-2021-4e3e-b922-0747619881c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aeroplane.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ball.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dampening.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/localization.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/navbar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pendulum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aeroplane.php" beforeDir="false" afterPath="$PROJECT_DIR$/aeroplane.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ball.php" beforeDir="false" afterPath="$PROJECT_DIR$/ball.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dampening.php" beforeDir="false" afterPath="$PROJECT_DIR$/dampening.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pendulum.php" beforeDir="false" afterPath="$PROJECT_DIR$/pendulum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +59,9 @@
       <workItem from="1591226288385" duration="821000" />
       <workItem from="1591230486401" duration="866000" />
       <workItem from="1591231412025" duration="39000" />
+      <workItem from="1591460398023" duration="11892000" />
+      <workItem from="1591484246974" duration="4742000" />
+      <workItem from="1591525906627" duration="4739000" />
     </task>
     <servers />
   </component>
@@ -71,10 +69,15 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#Deployment" timestamp="1588596474515">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="387" y="31" key="#Deployment" timestamp="1591460455348">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1588596474515" />
+    <state x="387" y="31" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1591460455348" />
+    <state x="552" y="178" key="#Options" timestamp="1591460527329">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Options/0.0.1920.1040@0.0.1920.1040" timestamp="1591460527329" />
     <state x="440" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589808587623">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -87,9 +90,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591231706475" />
-    <state x="568" y="94" key="ftp.server.browser" timestamp="1588596470970">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="798" y="134" key="ftp.server.browser" timestamp="1591460444768">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="568" y="94" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1588596470970" />
+    <state x="798" y="134" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1591460444768" />
   </component>
 </project>

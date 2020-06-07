@@ -14,9 +14,27 @@ $_SESSION['current_page'] = 'ball.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
 <?php include 'navbar.php'?>
+<label for = speed>Rychlosť zobrazovania grafu:</label>
+<input id = 'speed' type="number" name="speed" value= 0>
+<label for = speed>Parameter r:</label>
+<input id = 'param' type="number" name="param" value= 0.25>
+<input type="button" id = "showGraph" name="showGraph" value="GRAFUJ!">
+<script>
+    $("#showGraph").click(function () {
+        document.getElementById("showGraph").disabled = true;
+        var param = document.getElementById('param').value;
+        var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=gulicka&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + param;
+        $.getJSON(url, function(data){
+            displayGraph(data.data);
+        });
+    });
+</script>
+<div id = 'graph'></div>
 
 </body>
 </html>
