@@ -22,11 +22,11 @@ function updateLogs($mysql, $command, $result)
     $preparedQuery = $mysql->prepare("INSERT INTO log (datetime,request,is_error,error_description) VALUES (?,?,?,?)");
     if($error == 1)
     {
-        $preparedQuery->bind_param($date,$command,$error,$result);
+        $preparedQuery->bind_param("ssss",$date,$command,$error,$result);
     }
     else
     {
-        $preparedQuery->bind_param($date,$command,$error,null);
+        $preparedQuery->bind_param("ssss",$date,$command,$error,null);
     }
     $preparedQuery->execute();
 }
