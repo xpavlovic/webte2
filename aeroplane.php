@@ -35,6 +35,5 @@ $_SESSION['current_page'] = 'aeroplane.php';
     });
 </script>
 <div id = 'graph'></div>
-
 </body>
 </html>

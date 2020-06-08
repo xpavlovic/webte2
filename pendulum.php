@@ -35,6 +35,5 @@ $_SESSION['current_page'] = 'pendulum.php';
     });
 </script>
 <div id = 'graph'></div>
-
 </body>
 </html>

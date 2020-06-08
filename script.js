@@ -7,25 +7,33 @@ async function displayGraph(data) {
     var speed = Number(document.getElementById("speed").value);
     var currentData = {x: [], y: [], t: []};
     var maxT = data[1].t[data[1].t.length - 1];
-    var maxY = Math.max.apply(Math,data[1].y);
-    var minY = Math.min.apply(Math,data[1].y);
+
+    yVals = {min: Math.min.apply(Math,data[1].y), max: Math.max.apply(Math,data[1].y)};
+    xVals = {min: Math.min.apply(Math,data[1].x), max: Math.max.apply(Math,data[1].x)};
+
     for (var i = 0; i < data[1].x.length; i++) {
         currentData.x[i] = data[1].x[i];
         currentData.y[i] = data[1].y[i];
         currentData.t[i] = data[1].t[i];
-        drawGraph(currentData, maxT, maxY,    minY);
+        drawGraph(currentData, maxT, xVals, yVals);
         await sleep(speed * 100);
     }
     document.getElementById("showGraph").disabled = false;
 }
-function drawGraph(data,maxT,maxY,minY)
+function drawGraph(data,maxT,xVals,yVals)
 {
-    var graph1 = { x: data.t, y: data.x, type: 'scatter', name: 'x', line: {color: 'blue', width: 3 } };
-    var graph2 = { x: data.t, y: data.y, type: 'scatter', name: 'y', line: {color: 'gray', width: 3 } };
-    var layout = { xaxis: {range : [0,maxT]}, yaxis: {range: [minY - 0.1 ,maxY * 1.1]}};
-    var draw =  [graph2];
-
-    Plotly.newPlot('graph',draw,layout);
+    var graph1 = { x: data.t, y: data.x, type: 'scatter', name: 'x', line: {color: '#b3a50e', width: 3 } };
+    var graph2 = { x: data.t, y: data.y, xaxis: 'x2', yaxis: 'y2', type: 'scatter', name: 'y', line: {color: 'gray', width: 3 }  };
+    var layoutGraph = {
+        xaxis: {range : [0,maxT]},
+        yaxis: {range: [xVals.min - 0.1 ,xVals.max * 1.1]},
+        xaxis2: {range : [0,maxT]},
+        yaxis2: {range: [yVals.min - 0.1 ,yVals.max * 1.1], anchor: 'x2'},
+        grid: {rows: 1, columns: 2, pattern: 'independent'},
+        margin: {l : 150, r: 200}
+    };
+    var drawGraph = [graph1,graph2];
+    Plotly.newPlot('graph',drawGraph,layoutGraph);
 }
 
 
