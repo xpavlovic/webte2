@@ -13,10 +13,10 @@ function updateStats($script_name, $mysql)
 }
 function updateLogs($mysql, $command, $result)
 {
-    $error = 0;
+    $error = 1;
     if(strstr($result,"error") === false && strstr($result,"warning") === false)
     {
-        $error = 1;
+        $error = 0;
     }
     $date = date("Y-m-d H:i:s");
     $preparedQuery = $mysql->prepare("INSERT INTO log (datetime,request,is_error,error_description) VALUES (?,?,?,?)");
@@ -26,9 +26,11 @@ function updateLogs($mysql, $command, $result)
     }
     else
     {
-        $preparedQuery->bind_param("ssss",$date,$command,$error,null);
+        $nullV = NULL;
+        $preparedQuery->bind_param("ssss",$date,$command,$error,$nullV);
     }
-    $preparedQuery->execute();
+    $success = $preparedQuery->execute();
+    var_dump($success);
 }
 $mysql = new mysqli($servername, $username, $password,$dbname);
 if (isset($_GET['search'])) {
@@ -45,12 +47,13 @@ if (isset($_GET['search'])) {
                 $output = exec($cmd, $op, $rv);
                 //data z octave scriptu
                 $stringJSON = '{"data":[{"t":' . $op[0] . ', "y":' . $op[1] . ', "x":' . $op[2] . '},{"t":' . $op[3] . ', "y":' . $op[4] . ', "x":' . $op[5] . '}]}';
-                updateLogs($mysql,$cmd,$op[0]);
+                updateLogs($mysql,$script_name,$op[0]);
                 echo $stringJSON;
             } elseif (empty($_GET['parameter']) && !empty($_GET['scripts'])) {
                 $script_name = $_GET['scripts'];
                 //prikaz pre terminal
                 $cmd = "octave -W --eval '$script_name' 2>&1";
+
                 $output = exec($cmd, $op, $rv);
 
                 //data z octave scriptu
