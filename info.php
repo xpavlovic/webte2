@@ -21,153 +21,35 @@ $_SESSION['current_page'] = 'info.php';
 <div class="about p-3"><?php if (isset($api_info)) echo $api_info; ?>
     <div class="textI">
         <div class ="v move">
-            <h3>AUTENTIFIKÁCIA</h3>
+            <?php if (isset($authentication_text)) echo $authentication_text; ?>
+        </div>
+        <div class="v move">
+            <?php if (isset($api_input_text_pendulum)) echo $api_input_text_pendulum; ?>
             <p class="txt">
-                Na úvodnej stránke sa nachádza API KEY na základe ktorého sa
-                overuje vaša požiadavka pre daný vstup.<br>
-                Bez kľúča nie je možné službu používať.<br>
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_pendulum)) echo $api_output_text_pendulum; ?>
             </p>
         </div>
         <div class="v move">
-          <h3>Inverzné kývadlo</h3>
-            <h5>Vstup</h5>
+            <?php if (isset($api_input_text_ball)) echo $api_input_text_ball; ?>
             <p class="txt">
-                Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>kyvadlo</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br>
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_ball)) echo $api_output_text_ball; ?>
             </p>
-            <h5>Vystup</h5>
-            <p class="txt">
-            <pre>
-                Vystupom je JSON objekt v tvare: <br>
-                <div class="objekt">
-                {"data":[
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            },
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            }
-                        ]
-                }
-                </div>
-                <b>"t"</b> je čas na základe ktorého sa pozícia kývadla mení a hodnoty sú vždy od 0-10.
-                <b>"y"</b> je aktuálna pozícia kývadla.
-                <b>"x"</b> je aktuálny uhol kývadla.
-                V prvom objekte "x" a "y" sa nastavia na počiatočné nulové
-                podmienky a v druhom sa hodnoty nastavia na základe
-                poslednej hodnoty z prvého objektu. Iba "t" zostáva rovnaké.
-                 </pre>
-            </p>
-
         </div>
         <div class="v move">
-            <h3>Gulička na tyči</h3>
-            <h5>Vstup</h5>
+            <?php if (isset($api_input_text_dampening)) echo $api_input_text_dampening; ?>
             <p class="txt">
-                Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>gulicka</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br>
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_dampening)) echo $api_output_text_dampening; ?>
             </p>
-            <h5>Vystup</h5>
-            <p class="txt">
-            <pre>
-                Vystupom je JSON objekt v tvare: <br>
-                <div class="objekt">
-                {"data":[
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            },
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            }
-                        ]
-                }
-                </div>
-                <b>"t"</b> je čas na základe ktorého sa pozícia guličky mení a hodnoty sú vždy od 0-5.
-                <b>"y"</b> je aktuálna pozícia guličky.
-                <b>"x"</b> je aktuálny náklon tiče.
-                V prvom objekte "x" a "y" sa nastavia na počiatočné nulové
-                podmienky a v druhom sa hodnoty nastavia na základe
-                poslednej hodnoty z prvého objektu. Iba "t" zostáva rovnaké.
-                 </pre>
-            </p>
-
         </div>
         <div class="v move">
-            <h3>Tlmič kolesa</h3>
-            <h5>Vstup</h5>
+            <?php if (isset($api_input_text_plane)) echo $api_input_text_plane; ?>
             <p class="txt">
-                Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>tlmenie</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br>
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_plane)) echo $api_output_text_plane; ?>
             </p>
-            <h5>Vystup</h5>
-            <p class="txt">
-            <pre>
-                Vystupom je JSON objekt v tvare: <br>
-                <div class="objekt">
-                {"data":[
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            },
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            }
-                        ]
-                }
-                </div>
-                <b>"t"</b> je čas na základe ktorého sa pozícia kolesa mení pri nabehaní
-                na rôzne prekážky a hodnoty sú vždy od 0-5.
-                <b>"y"</b> je aktuálna pozícia vozidla.
-                <b>"x"</b> je aktuálny pozícia kolesa.
-                V prvom objekte "x" a "y" sa nastavia na počiatočné nulové
-                podmienky a v druhom sa hodnoty nastavia na základe
-                poslednej hodnoty z prvého objektu. Iba "t" zostáva rovnaké.
-                 </pre>
-            </p>
-
-        </div>
-        <div class="v move">
-            <h3>Náklon lietadla</h3>
-            <h5>Vstup</h5>
-            <p class="txt">
-                Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>lietadlo</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br>
-            </p>
-            <h5>Vystup</h5>
-            <p class="txt">
-            <pre>
-                Vystupom je JSON objekt v tvare: <br>
-                <div class="objekt">
-                {"data":[
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            },
-                            {
-                                "t":[],
-                                "y":[],
-                                "x":[]
-                            }
-                        ]
-                }
-                </div>
-                <b>"t"</b> je čas na základe ktorého sa náklon lietadla mení a hodnoty sú vždy od 0-40.
-                <b>"y"</b> je aktuálny náklon lietadla.
-                <b>"x"</b> je aktuálny náklon zadnej klapky.
-                V prvom objekte "x" a "y" sa nastavia na počiatočné nulové
-                podmienky a v druhom sa hodnoty nastavia na základe
-                poslednej hodnoty z prvého objektu. Iba "t" zostáva rovnaké.
-                 </pre>
-            </p>
-
         </div>
 
     </div>
