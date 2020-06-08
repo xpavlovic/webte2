@@ -10,6 +10,7 @@ $_SESSION['current_page'] = 'info.php';
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php if (isset($title_text)) echo $title_text; ?></title>
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -17,7 +18,42 @@ $_SESSION['current_page'] = 'info.php';
 </head>
 <body>
 <?php include 'navbar.php'?>
-<div class="about p-3"><?php if (isset($api_info)) echo $api_info; ?></div>
+<div class="about p-3"><?php if (isset($api_info)) echo $api_info; ?>
+    <div class="textI">
+        <div class ="v move">
+            <?php if (isset($authentication_text)) echo $authentication_text; ?>
+        </div>
+        <div class="v move">
+            <?php if (isset($api_input_text_pendulum)) echo $api_input_text_pendulum; ?>
+            <p class="txt">
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_pendulum)) echo $api_output_text_pendulum; ?>
+            </p>
+        </div>
+        <div class="v move">
+            <?php if (isset($api_input_text_ball)) echo $api_input_text_ball; ?>
+            <p class="txt">
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_ball)) echo $api_output_text_ball; ?>
+            </p>
+        </div>
+        <div class="v move">
+            <?php if (isset($api_input_text_dampening)) echo $api_input_text_dampening; ?>
+            <p class="txt">
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_dampening)) echo $api_output_text_dampening; ?>
+            </p>
+        </div>
+        <div class="v move">
+            <?php if (isset($api_input_text_plane)) echo $api_input_text_plane; ?>
+            <p class="txt">
+                <?php if (isset($api_output_text)) echo $api_output_text; ?>
+                <?php if (isset($api_output_text_plane)) echo $api_output_text_plane; ?>
+            </p>
+        </div>
+
+    </div>
+</div>
 
 <form method="post" action="pdf.php" class="p-3">
     <input type="submit" name="export" value="<?php if (isset($pdf_text)) echo $pdf_text; ?>" class="btn btn-dark" />
