@@ -23,6 +23,13 @@ if ($_COOKIE['lang'] == 'EN') {
     $table_name_task = "Name /<br> Task";
     $database_pdf_text = "Export log info to PDF";
     $database_csv_text = "Export log info to CSV";
+
+    //checkboxy k individualnym zadaniam
+    $graph_checkbox_text = "Graph";
+    $animation_checkbox_text = "Animation";
+
+    //kyvadlo
+    $pendulum_input_text = "Input (new position of pendulum in range 0-100)";
 } else {
     //menu
     $title_text = 'Záverečný projekt';
@@ -47,4 +54,11 @@ if ($_COOKIE['lang'] == 'EN') {
     $table_name_task = "Meno /<br> Uloha";
     $database_pdf_text = "Exportuj logovacie info do PDF";
     $database_csv_text = "Exportuj logovacie info do CSV";
+
+    //checkboxy k individualnym zadaniam
+    $graph_checkbox_text = "Graf";
+    $animation_checkbox_text = "Animácia";
+
+    //kyvadlo
+    $pendulum_input_text = "Vstup (nová pozícia kyvadla v rozsahu 0-100)";
 }
