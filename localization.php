@@ -98,7 +98,9 @@ if ($_COOKIE['lang'] == 'EN') {
     $api_input_text_ball = "<h3><b>Gulička na tyči</b></h3><br><h5>Vstup</h5><br><p class=\"txt\">Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>gulicka</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br></p>";
     $api_input_text_dampening = "<h3><b>Tlmič kolesa</b></h3><br><h5>Vstup</h5><br><p class=\"txt\">Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>tlmenie</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br></p>";
     $api_input_text_plane = "<h3><b>Náklon lietadla</b></h3><br><h5>Vstup</h5><br><p class=\"txt\"><br>Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>lietadlo</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br></p>";
-    $api_output_text = "<h5>Vystup</h5><br><pre>Vystupom je JSON objekt v tvare: <br>
+    $api_output_text = "<h5>Vystup</h5><br>
+        <pre>
+        Vystupom je JSON objekt v tvare: <br>
         <div class=\"objekt\">
         {\"data\":[                                 
                     {                             

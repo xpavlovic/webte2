@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="webte-server">
+  <component name="PublishConfigData" autoUpload="Always">
     <serverData>
-      <paths name="webte-server">
+      <paths name="webte2-server">
         <serverdata>
           <mappings>
-            <mapping deploy="/ultimus" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/final_p" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

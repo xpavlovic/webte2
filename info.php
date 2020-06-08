@@ -82,24 +82,38 @@ $_SESSION['current_page'] = 'info.php';
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Inštalacia Octave na server</td>
+                <td>API</td>
+                <td>Dvojjazyčnosť webstránky</td>
+                <td>Štruktúra a dvojjazyčnosť webstránky</td>
             </tr>
             <tr>
                 <th scope="row">2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>API</td>
+                <td>Grafy</td>
+                <td>Export do CSV a PDF</td>
+                <td>API kľúč</td>
             </tr>
             <tr>
                 <th scope="row">3</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>API popis</td>
+                <td>Ukladanie požiadaviek z Octave do DB</td>
+                <td>Preklad a exportovanie API popisu do PDF</td>
+                <td>DB pre logovanie požiadaviek z Octave</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Tabuľka úloh</td>
+                <td>Štatistika pre individualne úlohy</td>
+                <td>Vylepšenie webstránky</td>
+                <td>Formulár na úvodnej stránky a vylepšenie API</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Tlmič automobila</td>
+                <td>Náklon Lietadla</td>
+                <td>Gulička na tyči</td>
+                <td>Inverzné kývadlo</td>
             </tr>
         </tbody>
     </table>
