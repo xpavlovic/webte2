@@ -15,7 +15,7 @@ if ($_COOKIE['lang'] == 'EN') {
     $output_text = "Output:";
     $submit_button = "Submit";
     $api_key_text = "API key";
-
+  
     //API popis
     $api_info = "<h1>About API</h1>";
     $authentication_text = "<h3><b>AUTHENTICATION</b></h3><br><p class=\"txt\">On the home page there is an API KEY based on which your request is verified for the given entry. <br>It is not possible to use the service without the key.<br></p>";
