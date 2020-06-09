@@ -29,11 +29,6 @@ $_SESSION['current_page'] = 'pendulum.php';
 <?php include 'navbar.php' ?>
 <?php if (isset($pendulum_heading)) echo "<h3> <img src=\"https://www.gnu.org/software/octave/img/octave-logo.svg\"
              style=\"width: 32px; height: auto\" alt=\"GNU Octave logo\">".$pendulum_heading."</h3>"; ?>
-<input style="display: none" id='speed' type="number" name="speed" value=0>
-
-<script>
-
-</script>
 <form class="mt-5 col-lg-12 d-flex justify-content-center">
     <div class="col-lg-5">
         <div class="form-group">
@@ -155,7 +150,7 @@ $_SESSION['current_page'] = 'pendulum.php';
     }
 
     async function animate_pendulum(data) {
-        var speed = Number(document.getElementById("speed").value);
+        var speed = 0;
         for (var i = 0; i < data[0].x.length; i++) {
             move_pendulum(data[0].y[i],data[0].x[i]);
             await sleep(speed * 100);
@@ -179,7 +174,7 @@ $_SESSION['current_page'] = 'pendulum.php';
     }
 
     async function displayGraphPendulum(data) {
-        var speed = Number(document.getElementById("speed").value);
+        var speed = 0;
         var currentData = {x: [], y: [], t: []};
         var maxT = data[0].t[data[0].t.length - 1];
 
