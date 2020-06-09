@@ -97,8 +97,22 @@ if ($_COOKIE['lang'] == 'EN') {
     //Email
     $email = "Enter your E-mail so we could send you info about statistics";
 
-
-
+    //ulohy
+    $info_octave_installation_text = "Octave installation on server";
+    $info_multilingual_text = "Multilinguality of website";
+    $info_structure_multilingual_text = "Structure an multilinguality of website";
+    $info_graphs_text = "Graphs";
+    $info_csv_pdf_export_text = "Export to CSV a PDF";
+    $info_api_description_text = "API description";
+    $info_request_saving_text = "Logging of requests to DB";
+    $info_translation_export_text = "Translation and export of API description to PDF";
+    $info_log_db_text = "DB for request logging";
+    $info_task_table_text = "Tasks table";
+    $info_task_statistic_text = "Statistics for individual tasks";
+    $info_website_upgrade_text = "Website improvement";
+    $info_index_form_text = "Form on index page and API improvement";
+    $info_statistic_text = "Statistics";
+    $info_most_used_script_text = "Most used script is ";
 } else {
     //menu
     $title_text = 'Záverečný projekt';
@@ -200,4 +214,20 @@ if ($_COOKIE['lang'] == 'EN') {
     //Email
     $email = "Zadaj E-mail a my ti pošleme info o štatistike";
 
+    //ulohy
+    $info_octave_installation_text = "Inštalácia Octave na server";
+    $info_multilingual_text = "Dvojjazyčnosť webstránky";
+    $info_structure_multilingual_text = "Štruktúra a dvojjazyčnosť webstránky";
+    $info_graphs_text = "Grafy";
+    $info_csv_pdf_export_text = "Export do CSV a PDF";
+    $info_api_description_text = "API popis";
+    $info_request_saving_text = "Ukladanie požiadaviek z Octave do DB";
+    $info_translation_export_text = "Preklad a exportovanie API popisu do PDF";
+    $info_log_db_text = "DB pre logovanie požiadaviek z Octave";
+    $info_task_table_text = "Tabuľka úloh";
+    $info_task_statistic_text = "Štatistika pre individualne úlohy";
+    $info_website_upgrade_text = "Vylepšenie webstránky";
+    $info_index_form_text = "Formulár na úvodnej stránky a vylepšenie API";
+    $info_statistic_text = "Štatistika";
+    $info_most_used_script_text = "Skript, ktorý bol najviacej používaný je";
 }
