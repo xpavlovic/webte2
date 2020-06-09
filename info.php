@@ -41,9 +41,7 @@ function most_used_script($mysql)
 </head>
 <body>
 <?php include 'navbar.php'?>
-<div>
-    <div> Skript, ktorý bol najviacej používaný je <?php echo most_used_script($mysql); ?></div>
-</div>
+
 <div class="about p-3"><?php if (isset($api_info)) echo $api_info; ?>
     <div class="textI">
         <div class ="v move">
@@ -81,6 +79,7 @@ function most_used_script($mysql)
     </div>
 </div>
 
+<div class="moveBtns">
 <form method="post" action="pdf.php" class="p-3">
     <input type="submit" name="export" value="<?php if (isset($pdf_text)) echo $pdf_text; ?>" class="btn btn-dark" />
 </form>
@@ -92,7 +91,8 @@ function most_used_script($mysql)
 <form method="post" action="databaseToCSV.php" class="p-3">
     <input type="submit" name="export" value="<?php if (isset($database_csv_text)) echo $database_csv_text; ?>" class="btn btn-dark" />
 </form>
-
+</div>
+<div class="movefckinTable">
 <div class="w-75 p-3 table-responsive">
     <caption><?php if (isset($table_caption)) echo $table_caption; ?></caption>
     <table class="table table-striped table-dark table-hover text-center margin-auto mx-auto ">
@@ -108,28 +108,69 @@ function most_used_script($mysql)
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php if (isset($info_octave_installation_text)) echo $info_octave_installation_text; ?></td>
+                <td>API</td>
+                <td><?php if (isset($info_multilingual_text)) echo $info_multilingual_text; ?></td>
+                <td><?php if (isset($info_structure_multilingual_text)) echo $info_structure_multilingual_text; ?></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>API</td>
+                <td><?php if (isset($info_graphs_text)) echo $info_graphs_text; ?></td>
+                <td><?php if (isset($info_csv_pdf_export_text)) echo $info_csv_pdf_export_text; ?></td>
+                <td><?php if (isset($api_key_text)) echo $api_key_text; ?></td>
             </tr>
             <tr>
                 <th scope="row">3</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php if (isset($info_api_description_text)) echo $info_api_description_text; ?></td>
+                <td><?php if (isset($info_request_saving_text)) echo $info_request_saving_text; ?></td>
+                <td><?php if (isset($info_translation_export_text)) echo $info_translation_export_text; ?></td>
+                <td><?php if (isset($info_log_db_text)) echo $info_log_db_text; ?></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td><?php if (isset($info_task_table_text)) echo $info_task_table_text; ?></td>
+                <td><?php if (isset($info_task_statistic_text)) echo $info_task_statistic_text; ?></td>
+                <td><?php if (isset($info_website_upgrade_text)) echo $info_website_upgrade_text; ?></td>
+                <td><?php if (isset($info_index_form_text)) echo $info_index_form_text; ?></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td><?php if (isset($dampening_heading)) echo $dampening_heading; ?></td>
+                <td><?php if (isset($aeroplane_heading)) echo $aeroplane_heading; ?></td>
+                <td><?php if (isset($ball_heading)) echo $ball_heading; ?></td>
+                <td><?php if (isset($pendulum_heading)) echo $pendulum_heading; ?></td>
             </tr>
         </tbody>
     </table>
 </div>
+</div>
+
+<div class="statistic_info">
+    <h3><?php if (isset($info_statistic_text)) echo $info_statistic_text; ?></h3>
+    <div class="center">
+        <div> <?php if (isset($info_most_used_script_text)) echo $info_most_used_script_text; ?><?php echo "<b>".most_used_script($mysql)."</b>"; ?></div>
+    </div>
+    <form class="mt-5 col-lg-12 d-flex justify-content-center" action="info.php" method="post">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <label for="email"><?php if (isset($email)) echo $email; ?></label>
+                <input class="form-control" type="email" name="eMail" id="eMail">
+            </div>
+            <input id="submit" name="submit" type="submit" class="btn btn-secondary float-right">
+        </div>
+    </form>
+</div>
 
 </body>
 </html>
+<?php
+if(isset($_POST['submit']))
+{
+    $emailUser = $_POST['eMail'];
+   // echo $emailUser;
+    $message = most_used_script($mysql);
+    $subject = "Statistics";
+    //mail($emailUser,$subject,$message);
+}
+?>

@@ -1,7 +1,10 @@
 <?php
 include 'config.php';
 
-function updateStats($script_name, $mysql)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+function updateStats($mysql, $script_name )
 {
     if ($script_name == "gulicka" || $script_name == "kyvadlo" || $script_name == "lietadlo" || $script_name == "tlmenie")
     {
@@ -28,6 +31,7 @@ function updateLogs($mysql, $command, $result)
         $preparedQuery->bind_param("ssss",$date,$command,$error,$nullV);
     }
     $preparedQuery->execute();
+
 }
 $mysql = new mysqli($servername, $username, $password,$dbname);
 if (isset($_GET['search'])) {

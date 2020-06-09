@@ -10,7 +10,6 @@ $_SESSION['current_page'] = 'ball.php';
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php if (isset($title_text)) echo $title_text; ?></title>
-    <link rel = "stylesheet" href = "style/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -19,16 +18,14 @@ $_SESSION['current_page'] = 'ball.php';
     <script src="script.js" defer></script>
     <script src="fabric.min.js"></script>
     <script src="matter.js"></script>
+    <link rel = "stylesheet" href = "style/style.css">
 </head>
 <body>
 <?php include 'navbar.php'?>
-
+<?php if (isset($ball_heading)) echo "<h3> <img src=\"https://www.gnu.org/software/octave/img/octave-logo.svg\"
+             style=\"width: 32px; height: auto\" alt=\"GNU Octave logo\">".$ball_heading."</h3>"; ?>
 <form class="mt-5 col-lg-12 d-flex justify-content-center">
     <div class="col-lg-5">
-        <div class="form-group">
-            <label for="apiKey"><?php if (isset($api_key_text)) echo $api_key_text; ?></label>
-            <input class="form-control" type="text" name="apiKey" id="apiKey" value="99cf0f8b-8b17-4a1b-93e7-be2efaec965e">
-        </div>
         <div class="form-group">
             <label for = speed style="display: none">Rychlosť zobrazovania grafu:</label>
             <input id ='speed' type="number" name="speed" value= 0 style="display: none">
@@ -93,7 +90,6 @@ $_SESSION['current_page'] = 'ball.php';
     </div>
 </div>
 <div id="graph"></div>
-
 <script>
 
     let initPozicia = 0;
