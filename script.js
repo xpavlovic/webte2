@@ -6,15 +6,15 @@ function sleep(ms) {
 async function displayGraph(data) {
     var speed = Number(document.getElementById("speed").value);
     var currentData = {x: [], y: [], t: []};
-    var maxT = data[1].t[data[1].t.length - 1];
+    var maxT = data[0].t[data[0].t.length - 1];
 
     let yVals = {min: Math.min.apply(Math, data[1].y), max: Math.max.apply(Math, data[1].y)};
     let xVals = {min: Math.min.apply(Math, data[1].x), max: Math.max.apply(Math, data[1].x)};
 
-    for (var i = 0; i < data[1].x.length; i++) {
-        currentData.x[i] = data[1].x[i];
-        currentData.y[i] = data[1].y[i];
-        currentData.t[i] = data[1].t[i];
+    for (var i = 0; i < data[0].x.length; i++) {
+        currentData.x[i] = data[0].x[i];
+        currentData.y[i] = data[0].y[i];
+        currentData.t[i] = data[0].t[i];
         drawGraph(currentData, maxT, xVals, yVals);
         await sleep(speed * 100);
     }

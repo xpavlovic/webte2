@@ -1,8 +1,6 @@
 <?php
 include 'config.php';
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 function updateStats($script_name, $mysql)
 {
     if ($script_name == "gulicka" || $script_name == "kyvadlo" || $script_name == "lietadlo" || $script_name == "tlmenie")
@@ -29,8 +27,7 @@ function updateLogs($mysql, $command, $result)
         $nullV = NULL;
         $preparedQuery->bind_param("ssss",$date,$command,$error,$nullV);
     }
-    $success = $preparedQuery->execute();
-    var_dump($success);
+    $preparedQuery->execute();
 }
 $mysql = new mysqli($servername, $username, $password,$dbname);
 if (isset($_GET['search'])) {
@@ -41,16 +38,7 @@ if (isset($_GET['search'])) {
                 $parameter = $_GET['parameter'];
                 //echo "PARAMETER: ".$parameter.'\n';
                 //prikaz pre terminal
-                switch ($script_name){
-                    case "kyvadlo":
-                        $cmd = "octave --eval 'r = $parameter; initPozicia = ".$_GET['initPozicia']."; initUhol = ".$_GET['initUhol'].";' --eval '$script_name'";
-                    case "lietadlo":
-                        $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
-                    case "gulicka":
-                        $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
-                    case "tlmenie":
-                        $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
-                }
+                $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
 
                 updateStats($mysql,$script_name );
                 $output = exec($cmd, $op, $rv);

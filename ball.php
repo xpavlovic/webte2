@@ -36,7 +36,7 @@ $_SESSION['current_page'] = 'ball.php';
             <input class="form-control" id='param' type="number" name="param" value=25 >
         </div>
 
-        <button id="showGraphBall" type="button" name="showGraphBall" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button?></button>
+        <button id="showGraph" type="button" name="showGraph" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button?></button>
     </div>
 </form>
 <div class="container">
@@ -95,6 +95,20 @@ $_SESSION['current_page'] = 'ball.php';
 <div id="graph"></div>
 
 <script>
+
+    let initPozicia = 0;
+
+    $("#showGraph").click(function () {
+        document.getElementById("showGraph").disabled = true;
+        var param = document.getElementById('param').value;
+        var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=gulicka&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + param;
+        var parameterURL = encodeURIComponent(param + ";initPozicia=" + initPozicia + ";");
+        var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=kyvadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
+        $.getJSON(url, function(data){
+            initPozicia = data.data[0].y[(data.data[0].y.length)-1];
+            displayGraph(data.data);
+        });
+    });
     //let canvas = new fabric.Canvas('c');
 
     // module aliases

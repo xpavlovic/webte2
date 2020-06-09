@@ -1,7 +1,30 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include 'localization.php';
 include 'config.php';
 $_SESSION['current_page'] = 'info.php';
+$mysql = new mysqli($servername, $username, $password,$dbname);
+
+function most_used_script($mysql)
+{
+
+    $query = "SELECT kyvadlo,lietadlo,gulicka,tlmenie FROM stats WHERE ID = 1";
+    $result = mysqli_query($mysql, $query);
+    $values = $result->fetch_assoc();
+    $max_name = "";
+    $max_value = 0;
+    foreach ($values as $script_name => $value)
+    {
+        if ($max_value < $value)
+        {
+            $max_value = $value;
+            $max_name = $script_name;
+        }
+    }
+    return $max_name . " a počet použití je: " . $max_value;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +41,9 @@ $_SESSION['current_page'] = 'info.php';
 </head>
 <body>
 <?php include 'navbar.php'?>
+<div>
+    <div> Skript, ktorý bol najviacej používaný je <?php echo most_used_script($mysql); ?></div>
+</div>
 <div class="about p-3"><?php if (isset($api_info)) echo $api_info; ?>
     <div class="textI">
         <div class ="v move">
