@@ -41,8 +41,17 @@ if (isset($_GET['search'])) {
                 $parameter = $_GET['parameter'];
                 //echo "PARAMETER: ".$parameter.'\n';
                 //prikaz pre terminal
+                switch ($script_name){
+                    case "kyvadlo":
+                        $cmd = "octave --eval 'r = $parameter; initPozicia = ".$_GET['initPozicia']."; initUhol = ".$_GET['initUhol'].";' --eval '$script_name'";
+                    case "lietadlo":
+                        $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
+                    case "gulicka":
+                        $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
+                    case "tlmenie":
+                        $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
+                }
 
-                $cmd = "octave --eval 'r = $parameter;' --eval '$script_name'";
                 updateStats($mysql,$script_name );
                 $output = exec($cmd, $op, $rv);
                 //data z octave scriptu
