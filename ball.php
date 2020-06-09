@@ -32,7 +32,7 @@ $_SESSION['current_page'] = 'ball.php';
         document.getElementById("showGraph").disabled = true;
         var param = document.getElementById('param').value;
         var parameterURL = encodeURIComponent(param + ";initPozicia=" + initPozicia + ";");
-        var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=kyvadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
+        var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=gulicka&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
         $.getJSON(url, function(data){
             initPozicia = data.data[0].y[(data.data[0].y.length)-1];
             displayGraph(data.data);
