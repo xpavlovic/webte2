@@ -190,6 +190,11 @@ $_SESSION['current_page'] = 'pendulum.php';
         }
         document.getElementById("showGraph").disabled = false;
     }
+    function animateWithData(elevatorAngle,planeAngle)
+    {
+        //Toto tu bi nemalo bit ale bi aj malo :DD
+        //Pls do not remove this function
+    }
 </script>
 </body>
 </html>

@@ -89,6 +89,11 @@ $_SESSION['current_page'] = 'dampening.php';
                 });
         });
 
+    function animateWithData(elevatorAngle,planeAngle)
+    {
+        //Toto tu bi nemalo bit ale bi aj malo :DD
+        //Pls do not remove this function
+    }
 </script>
 <div id="animationDampening">
 

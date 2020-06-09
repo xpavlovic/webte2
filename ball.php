@@ -206,6 +206,11 @@ $_SESSION['current_page'] = 'ball.php';
         height: 35
     });
     canvas.add(rect);*/
+    function animateWithData(elevatorAngle,planeAngle)
+    {
+        //Toto tu bi nemalo bit ale bi aj malo :DD
+        //Pls do not remove this function
+    }
 </script>
 </body>
 </html>

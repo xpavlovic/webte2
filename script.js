@@ -16,7 +16,7 @@ async function displayGraph(data) {
         currentData.y[i] = data[0].y[i];
         currentData.t[i] = data[0].t[i];
         drawGraph(currentData, maxT, xVals, yVals);
-        //drawPlaneWithData(data[0])
+        animateWithData(data[0].x[i] , data[0].y[i] )
         await sleep(speed * 100);
     }
     document.getElementById("showGraph").disabled = false;

@@ -29,7 +29,7 @@ $_SESSION['current_page'] = 'aeroplane.php';
     <div class="col-lg-5">
         <div class="form-group">
             <label for="param"><?php if (isset($aeroplane_input_text)) echo $aeroplane_input_text ?></label>
-            <input class="form-control" type="number" name="param" id="param" max="100" min="0" value="50">
+            <input class="form-control" type="number" name="param" id="param" max="90" min="0" value="25">
         </div>
         <button id="showGraph" type="button"
                 class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button ?></button>
@@ -55,14 +55,18 @@ $_SESSION['current_page'] = 'aeroplane.php';
         var param = document.getElementById('param').value;
         var parameterURL = encodeURIComponent(param + ";initQ=" + initQ + ";initTheta=" + initTheta + ";");
         var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=lietadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
+        console.log(url);
         $.getJSON(url, function(data){
-            initTheta = data.data[0].x[(data.data[0].x.length)-1];
-            initQ = data.data[0].y[(data.data[0].y.length)-1];
+            initTheta = data.data[0].y[(data.data[0].y.length)-1];
             displayGraph(data.data);
         });
     });
 </script>
-<canvas id = "plane"></canvas>
+<div class="d-flex justify-content-center">
+    <div id="animation" class="col-lg-10" style="display: none">
+        <canvas id = "plane"></canvas>
+    </div>
+</div>
 <div id = 'graph'></div>
 <img src="plane.png" class = "hiddenImg" id = 'planeImg'>
 <img src="elevator.png" class = "hiddenImg" id = 'elevatorImg'>
@@ -86,11 +90,13 @@ $_SESSION['current_page'] = 'aeroplane.php';
     var  objs = canvas.getObjects();
     var planeObj= objs[0];
     var elevatorObj = objs[0].item(1);
+    planeObj.center();
     canvas.renderAll();
-    function drawPlaneWithData(elevatorAngle,planeAngle)
+    function animateWithData(elevatorAngle,planeAngle)
     {
         planeObj.rotate(-1 * (planeAngle));
         elevatorObj.rotate(-1 * elevatorAngle);
+        canvas.renderAll();
     }
 </script>
 </body>
