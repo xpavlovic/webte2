@@ -8,8 +8,8 @@ async function displayGraph(data) {
     var currentData = {x: [], y: [], t: []};
     var maxT = data[1].t[data[1].t.length - 1];
 
-    yVals = {min: Math.min.apply(Math,data[1].y), max: Math.max.apply(Math,data[1].y)};
-    xVals = {min: Math.min.apply(Math,data[1].x), max: Math.max.apply(Math,data[1].x)};
+    let yVals = {min: Math.min.apply(Math, data[1].y), max: Math.max.apply(Math, data[1].y)};
+    let xVals = {min: Math.min.apply(Math, data[1].x), max: Math.max.apply(Math, data[1].x)};
 
     for (var i = 0; i < data[1].x.length; i++) {
         currentData.x[i] = data[1].x[i];
@@ -36,12 +36,20 @@ function drawGraph(data,maxT,xVals,yVals)
     Plotly.newPlot('graph',drawGraph,layoutGraph);
 }
 
-
-
-
 $(document).ready(
     function()
     {
+        $("#showGraphBall").click(
+            function() {
+
+                document.getElementById("showGraphBall").disabled = true;
+                var param = document.getElementById('param').value;
+                var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=gulicka&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + param;
+                $.getJSON(url, function(data){
+                    displayGraph(data.data);
+                });
+            });
+
         $("#submit").click(
             function() {
                 var input = encodeURIComponent(document.getElementById("inputName").value);
@@ -53,6 +61,33 @@ $(document).ready(
                     document.getElementById("output").value=data;
                 });
             });
-    }
+        $('#animation_checkbox').change(
+            function () {
+                if ($(this).is(':checked')){
+                    $('#animation').show();
+                }
+                else {
+                    $('#animation').hide();
+                }
+            });
+        $('#graph_checkbox').change(
+            function () {
+                if ($(this).is(':checked')){
+                    $('#graph').show();
+                }
+                else {
+                    $('#graph').hide();
+                }
+            });
+
+    },
 );
 
+let ball = document.getElementById('ball');
+let beam = document.getElementById('beam');
+let lever = document.getElementById('lever');
+
+function move_ball(position,angle) {
+    let rotation = -parseFloat(angle) + 180;
+    ball.setAttribute('transform','rotate('+rotation+' 727 379.3)');
+}

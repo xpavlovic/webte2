@@ -15,7 +15,12 @@ if ($_COOKIE['lang'] == 'EN') {
     $output_text = "Output:";
     $submit_button = "Submit";
     $api_key_text = "API key";
-  
+
+    //ball
+    $input_for_ball = "Input (new position of ball on a beam in range 0-100)";
+    $animation_text = "Animation";
+    $graph_text = "Graph";
+
     //API popis
     $api_info = "<h1>About API</h1>";
     $authentication_text = "<h3><b>AUTHENTICATION</b></h3><br><p class=\"txt\">On the home page there is an API KEY based on which your request is verified for the given entry. <br>It is not possible to use the service without the key.<br></p>";
@@ -98,6 +103,11 @@ if ($_COOKIE['lang'] == 'EN') {
     $submit_button = "Odoslať";
     $api_key_text = "API kľúč";
 
+    //ball
+    $input_for_ball = "Vstup (požadovaná nová poloha guličky na tyči od 0-100)";
+    $animation_text = "Animácia";
+    $graph_text = "Graf";
+
     //API popis
     $api_info = "<h1>Popis API</h1>";
     $authentication_text = "<h3><b>AUTENTIFIKÁCIA</b></h3><br><p class=\"txt\">Na úvodnej stránke sa nachádza API KEY na základe ktorého sa overuje vaša požiadavka pre daný vstup.<br>Bez kľúča nie je možné službu používať.<br></p>";
@@ -124,26 +134,28 @@ if ($_COOKIE['lang'] == 'EN') {
     $api_output_text_pendulum = "<b>\"t\"</b> je čas na základe ktorého sa pozícia kývadla mení
                 a hodnoty sú vždy od 0-10.                                                  
                 <b>\"y\"</b> je aktuálna pozícia kývadla.                                           
-                <b>\"x\"</b> je aktuálny uhol kývadla.
+                <b>\"x\"</b> je aktuálny uhol kývadla.                                                  
+                V prvom objekte \"x\" a \"y\" sa nastavia na počiatočné nulové
+                podmienky a v druhom sa hodnoty nastavia na základe             
+                poslednej hodnoty z prvého objektu. Iba \"t\" zostáva rovnaké.</pre>";
+    $api_output_text_ball = "<b>\"t\"</b> je čas na základe ktorého sa pozícia guličky                
+                mení a hodnoty sú vždy od 0-5.                                             
+                <b>\"y\"</b> je aktuálna pozícia guličky.                                              
+                <b>\"x\"</b> je aktuálny náklon tyče.                                                       
                 V prvom objekte \"x\" a \"y\" sa nastavia na počiatočné nulové
                 podmienky a v druhom sa hodnoty nastavia na základe
                 poslednej hodnoty z prvého objektu. Iba \"t\" zostáva rovnaké.</pre>";
-    $api_output_text_ball = "<b>\"t\"</b> je čas na základe ktorého sa pozícia guličky mení a hodnoty sú vždy od 0-5.
-                <b>\"y\"</b> je aktuálna pozícia guličky.
-                <b>\"x\"</b> je aktuálny náklon tyče.
-                V prvom objekte \"x\" a \"y\" sa nastavia na počiatočné nulové
-                podmienky a v druhom sa hodnoty nastavia na základe
-                poslednej hodnoty z prvého objektu. Iba \"t\" zostáva rovnaké.</pre>";
-    $api_output_text_dampening = "<b>\"t\"</b> je čas na základe ktorého sa pozícia kolesa mení pri nabehaní
+    $api_output_text_dampening = "<b>\"t\"</b> je čas na základe ktorého sa pozícia kolesa mení pri nabehaní 
                 na rôzne prekážky a hodnoty sú vždy od 0-5.
-                <b>\"y\"</b> je aktuálna pozícia vozidla.
-                <b>\"x\"</b> je aktuálny pozícia kolesa.
+                <b>\"y\"</b> je aktuálna pozícia vozidla.                                               
+                <b>\"x\"</b> je aktuálny pozícia kolesa.                                                    
                 V prvom objekte \"x\" a \"y\" sa nastavia na počiatočné nulové
                 podmienky a v druhom sa hodnoty nastavia na základe
                 poslednej hodnoty z prvého objektu. Iba \"t\" zostáva rovnaké.</pre>";
-    $api_output_text_plane = "<b>\"t\"</b> je čas na základe ktorého sa náklon lietadla mení a hodnoty sú vždy od 0-40.
-                <b>\"y\"</b> je aktuálny náklon lietadla.
-                <b>\"x\"</b> je aktuálny náklon zadnej klapky.
+    $api_output_text_plane = "<b>\"t\"</b> je čas na základe ktorého sa náklon lietadla               
+                mení a hodnoty sú vždy od 0-40.                                         
+                <b>\"y\"</b> je aktuálny náklon lietadla.                                               
+                <b>\"x\"</b> je aktuálny náklon zadnej klapky.                                          
                 V prvom objekte \"x\" a \"y\" sa nastavia na počiatočné nulové
                 podmienky a v druhom sa hodnoty nastavia na základe
                 poslednej hodnoty z prvého objektu. Iba \"t\" zostáva rovnaké.</pre>";
