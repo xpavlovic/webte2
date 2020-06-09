@@ -76,6 +76,13 @@ if ($_COOKIE['lang'] == 'EN') {
     $database_pdf_text = "Export log info to PDF";
     $database_csv_text = "Export log info to CSV";
 
+    //checkboxy k individualnym zadaniam
+    $graph_checkbox_text = "Graph";
+    $animation_checkbox_text = "Animation";
+
+    //kyvadlo
+    $pendulum_input_text = "Input (new position of pendulum in range 0-100)";
+
     //Headings
     $aeroplane_heading = "AIRCRAFT PITCH";
     $dampening_heading = "VEHICLE DAMPENING";
@@ -84,6 +91,8 @@ if ($_COOKIE['lang'] == 'EN') {
 
     //Email
     $email = "Enter your E-mail so we could send you info about statistics";
+
+
 
 } else {
     //menu
@@ -159,6 +168,14 @@ if ($_COOKIE['lang'] == 'EN') {
     $database_pdf_text = "Exportuj logovacie info do PDF";
     $database_csv_text = "Exportuj logovacie info do CSV";
 
+
+    //checkboxy k individualnym zadaniam
+    $graph_checkbox_text = "Graf";
+    $animation_checkbox_text = "Animácia";
+
+    //kyvadlo
+    $pendulum_input_text = "Vstup (nová pozícia kyvadla v rozsahu 0-100)";
+
     //Headings
     $aeroplane_heading = "NÁKLON LIETADLA";
     $dampening_heading = "TLMIČ VOZIDLA";
@@ -167,4 +184,5 @@ if ($_COOKIE['lang'] == 'EN') {
 
     //Email
     $email = "Enter your E-mail so we could send you info about statistics";
+
 }
