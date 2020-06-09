@@ -69,11 +69,22 @@ if ($_COOKIE['lang'] == 'EN') {
                 In the first object, \"x\" and \"y\" are set to initial zeros                       
                 conditions, and in the second, the values are set based on           
                 the last value from the first object. Only the \"t\" remains the same.</pre>";
+
     $pdf_text = "Download as PDF";
     $table_caption = "Tasks";
     $table_name_task = "Name /<br> Task";
     $database_pdf_text = "Export log info to PDF";
     $database_csv_text = "Export log info to CSV";
+
+    //Headings
+    $aeroplane_heading = "AIRCRAFT PITCH";
+    $dampening_heading = "VEHICLE DAMPENING";
+    $pendulum_heading = "INVERTED PENDULUM";
+    $ball_heading = "BALL & BEAM";
+
+    //Email
+    $email = "Enter your E-mail so we could send you info about statistics";
+
 } else {
     //menu
     $title_text = 'Záverečný projekt';
@@ -147,4 +158,13 @@ if ($_COOKIE['lang'] == 'EN') {
     $table_name_task = "Meno /<br> Uloha";
     $database_pdf_text = "Exportuj logovacie info do PDF";
     $database_csv_text = "Exportuj logovacie info do CSV";
+
+    //Headings
+    $aeroplane_heading = "NÁKLON LIETADLA";
+    $dampening_heading = "TLMIČ VOZIDLA";
+    $pendulum_heading = "INVERZNÉ KÝVADLO";
+    $ball_heading = "GULIČKA NA TYČI";
+
+    //Email
+    $email = "Enter your E-mail so we could send you info about statistics";
 }

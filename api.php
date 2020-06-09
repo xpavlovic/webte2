@@ -3,7 +3,7 @@ include 'config.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-function updateStats($script_name, $mysql)
+function updateStats($mysql, $script_name )
 {
     if ($script_name == "gulicka" || $script_name == "kyvadlo" || $script_name == "lietadlo" || $script_name == "tlmenie")
     {
@@ -29,8 +29,8 @@ function updateLogs($mysql, $command, $result)
         $nullV = NULL;
         $preparedQuery->bind_param("ssss",$date,$command,$error,$nullV);
     }
-    $success = $preparedQuery->execute();
-    var_dump($success);
+    $preparedQuery->execute();
+
 }
 $mysql = new mysqli($servername, $username, $password,$dbname);
 if (isset($_GET['search'])) {

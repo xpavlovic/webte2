@@ -20,6 +20,7 @@ $_SESSION['current_page'] = 'ball.php';
 </head>
 <body>
 <?php include 'navbar.php'?>
+<?php if (isset($ball_heading)) echo "<h3>".$ball_heading."</h3>"; ?>
 <label for = speed>Rychlosť zobrazovania grafu:</label>
 <input id = 'speed' type="number" name="speed" value= 0>
 <label for = speed>Parameter r:</label>

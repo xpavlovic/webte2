@@ -19,9 +19,17 @@ set_error_handler("var_dump");*/
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <?php include 'navbar.php'?>
+<h3>
+
+        <img src="https://www.gnu.org/software/octave/img/octave-logo.svg"
+             style="width: 32px; height: auto" alt="GNU Octave logo">
+        GNU Octave
+
+</h3>
 <form class="mt-5 col-lg-12 d-flex justify-content-center">
     <div class="col-lg-5">
         <div class="form-group">

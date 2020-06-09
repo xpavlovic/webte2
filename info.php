@@ -54,7 +54,7 @@ $_SESSION['current_page'] = 'info.php';
 
     </div>
 </div>
-
+<div class="moveBtns">
 <form method="post" action="pdf.php" class="p-3">
     <input type="submit" name="export" value="<?php if (isset($pdf_text)) echo $pdf_text; ?>" class="btn btn-dark" />
 </form>
@@ -66,7 +66,8 @@ $_SESSION['current_page'] = 'info.php';
 <form method="post" action="databaseToCSV.php" class="p-3">
     <input type="submit" name="export" value="<?php if (isset($database_csv_text)) echo $database_csv_text; ?>" class="btn btn-dark" />
 </form>
-
+</div>
+<div class="movefckinTable">
 <div class="w-75 p-3 table-responsive">
     <caption><?php if (isset($table_caption)) echo $table_caption; ?></caption>
     <table class="table table-striped table-dark table-hover text-center margin-auto mx-auto ">
@@ -110,13 +111,26 @@ $_SESSION['current_page'] = 'info.php';
             </tr>
             <tr>
                 <th scope="row">4</th>
-                <td>Tlmič automobila</td>
-                <td>Náklon Lietadla</td>
-                <td>Gulička na tyči</td>
-                <td>Inverzné kývadlo</td>
+                <td><?php if (isset($dampening_heading)) echo $dampening_heading; ?></td>
+                <td><?php if (isset($aeroplane_heading)) echo $aeroplane_heading; ?></td>
+                <td><?php if (isset($ball_heading)) echo $ball_heading; ?></td>
+                <td><?php if (isset($pendulum_heading)) echo $pendulum_heading; ?></td>
             </tr>
         </tbody>
     </table>
+</div>
+</div>
+
+<div class="statistic_info">
+    <form class="mt-5 col-lg-12 d-flex justify-content-center">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input class="form-control" type="email" name="eMail" id="eMail">
+            </div>
+            <button id="submit" type="button" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button?></button>
+        </div>
+    </form>
 </div>
 
 </body>

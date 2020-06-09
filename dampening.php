@@ -16,14 +16,46 @@ $_SESSION['current_page'] = 'dampening.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <?php include 'navbar.php'?>
-<label for = speed>Rychlosť zobrazovania grafu:</label>
-<input id = 'speed' type="number" name="speed" value= 0>
-<label for = speed>Parameter r:</label>
-<input id = 'param' type="number" name="param" value= 0.25>
-<input type="button" id = "showGraph" name="showGraph" value="GRAFUJ!">
+<?php if (isset($dampening_heading)) echo "<h3>".$dampening_heading."</h3>"; ?>
+<script>
+    function change_language(language) {
+        document.cookie = "lang="+language;
+        location.reload();
+    }
+</script>
+<form class="mt-5 col-lg-12 d-flex justify-content-center">
+    <div class="col-lg-5">
+        <div class="form-group">
+            <label for="apiKey"><?php if (isset($api_key_text)) echo $api_key_text; ?></label>
+            <input class="form-control" type="text" name="apiKey" id="apiKey" value="99cf0f8b-8b17-4a1b-93e7-be2efaec965e">
+        </div>
+        <div class="form-group">
+            <label for = speed style="display: none">Rychlosť zobrazovania grafu:</label>
+            <input id ='speed' type="number" name="speed" value= 0 style="display: none">
+            <label for="param"><?php if (isset($input_text)) echo $input_text; ?></label>
+            <input class="form-control" id='param' type="number" name="param" value=25 >
+        </div>
+
+        <button id="showGraph" type="button" name="showGraph" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button; ?></button>
+    </div>
+</form>
+<div class="container">
+    <div class="form-row justify-content-center mt-4">
+        <div class="form-group">
+            <label for="animation_checkbox">Animácia</label>
+            <input class="form-control" type="checkbox" id="animation_checkbox" name="animation" style="height: 80%">
+        </div>
+        <div class="form-group ml-5">
+            <label for="graph_checkbox">Graf</label>
+            <input class="form-control" type="checkbox" id="graph_checkbox" name="graph" style="height: 80%">
+        </div>
+    </div>
+</div>
+<!--<input type="button" id = "showGraph" name="showGraph" value="GRAFUJ!">-->
 <script>
     $("#showGraph").click(function () {
         document.getElementById("showGraph").disabled = true;
@@ -32,9 +64,33 @@ $_SESSION['current_page'] = 'dampening.php';
         $.getJSON(url, function(data){
             displayGraph(data.data);
         });
+
     });
+    $(document).ready(
+        function() {
+            $('#animation_checkbox').change(
+                function () {
+                    if ($(this).is(':checked')) {
+                        $('#animation').show();
+                    } else {
+                        $('#animation').hide();
+                    }
+                });
+            $('#graph_checkbox').change(
+                function () {
+                    if ($(this).is(':checked')) {
+                        $('#graph').show();
+                    } else {
+                        $('#graph').hide();
+                    }
+                });
+        });
+
 </script>
-<div id = 'graph'></div>
+<div id="animationDampening">
+
+</div>
+<div id = 'graph' style="margin-top: 5%"></div>
 
 </body>
 </html>
