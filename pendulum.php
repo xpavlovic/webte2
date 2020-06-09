@@ -117,7 +117,8 @@ $_SESSION['current_page'] = 'pendulum.php';
             $("#showGraph").click(function () {
                 document.getElementById("showGraph").disabled = true;
                 var param = document.getElementById('param').value;
-                var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=kyvadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + param + "&initUhol=" + initUhol + "&initPozicia=" + initPozicia;
+                var parameterURL = encodeURIComponent(param + ";initUhol=" + initUhol + ";initPozicia=" + initPozicia + ";");
+                var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=kyvadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
                 $.getJSON(url, function (data) {
                     displayGraph(data.data);
                     initUhol = data.data[0].x[(data.data[0].x.length)-1];
