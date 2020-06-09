@@ -74,6 +74,7 @@ if ($_COOKIE['lang'] == 'EN') {
                 In the first object, \"x\" and \"y\" are set to initial zeros                       
                 conditions, and in the second, the values are set based on           
                 the last value from the first object. Only the \"t\" remains the same.</pre>";
+
     $pdf_text = "Download as PDF";
     $table_caption = "Tasks";
     $table_name_task = "Name /<br> Task";
@@ -86,6 +87,18 @@ if ($_COOKIE['lang'] == 'EN') {
 
     //kyvadlo
     $pendulum_input_text = "Input (new position of pendulum in range 0-100)";
+
+    //Headings
+    $aeroplane_heading = "AIRCRAFT PITCH";
+    $dampening_heading = "VEHICLE DAMPENING";
+    $pendulum_heading = "INVERTED PENDULUM";
+    $ball_heading = "BALL & BEAM";
+
+    //Email
+    $email = "Enter your E-mail so we could send you info about statistics";
+
+
+
 } else {
     //menu
     $title_text = 'Záverečný projekt';
@@ -115,7 +128,9 @@ if ($_COOKIE['lang'] == 'EN') {
     $api_input_text_ball = "<h3><b>Gulička na tyči</b></h3><br><h5>Vstup</h5><br><p class=\"txt\">Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>gulicka</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br></p>";
     $api_input_text_dampening = "<h3><b>Tlmič kolesa</b></h3><br><h5>Vstup</h5><br><p class=\"txt\">Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>tlmenie</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br></p>";
     $api_input_text_plane = "<h3><b>Náklon lietadla</b></h3><br><h5>Vstup</h5><br><p class=\"txt\"><br>Zadaný parameter <b>'r'</b> zo vstupu sa pošle na url:<br> './api/scripts?scripts=<b>lietadlo</b>&'parameter='+ <b>r</b> +'&key=<b>99cf0f8b-8b17-4a1b-93e7-be2efaec965e</b>' <br></p>";
-    $api_output_text = "<h5>Vystup</h5><br><pre>Vystupom je JSON objekt v tvare: <br>
+    $api_output_text = "<h5>Vystup</h5><br>
+        <pre>
+        Vystupom je JSON objekt v tvare: <br>
         <div class=\"objekt\">
         {\"data\":[                                 
                     {                             
@@ -165,10 +180,24 @@ if ($_COOKIE['lang'] == 'EN') {
     $database_pdf_text = "Exportuj logovacie info do PDF";
     $database_csv_text = "Exportuj logovacie info do CSV";
 
+
     //checkboxy k individualnym zadaniam
     $graph_checkbox_text = "Graf";
     $animation_checkbox_text = "Animácia";
 
     //kyvadlo
     $pendulum_input_text = "Vstup (nová pozícia kyvadla v rozsahu 0-100)";
+    $aeroplane_input_text = "Vstup (nový náklon litadla)";
+    $ball_input_text = "Vstup (nová poloha guličky na tyči v rozsahu)";
+    $dampening_input_text = "Vstup (nová výška skokovej prekážky)";
+
+    //Headings
+    $aeroplane_heading = "NÁKLON LIETADLA";
+    $dampening_heading = "TLMIČ VOZIDLA";
+    $pendulum_heading = "INVERZNÉ KÝVADLO";
+    $ball_heading = "GULIČKA NA TYČI";
+
+    //Email
+    $email = "Zadaj E-mail a my ti pošleme info o štatistike";
+
 }

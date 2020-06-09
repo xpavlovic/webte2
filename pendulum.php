@@ -22,10 +22,15 @@ $_SESSION['current_page'] = 'pendulum.php';
             crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+
 <?php include 'navbar.php' ?>
+<?php if (isset($pendulum_heading)) echo "<h3> <img src=\"https://www.gnu.org/software/octave/img/octave-logo.svg\"
+             style=\"width: 32px; height: auto\" alt=\"GNU Octave logo\">".$pendulum_heading."</h3>"; ?>
 <input style="display: none" id='speed' type="number" name="speed" value=0>
+
 <script>
 
 </script>

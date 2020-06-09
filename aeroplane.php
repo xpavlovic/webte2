@@ -16,14 +16,34 @@ $_SESSION['current_page'] = 'aeroplane.php';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <?php include 'navbar.php'?>
-<label for = speed>Rychlosť zobrazovania grafu:</label>
-<input id = 'speed' type="number" name="speed" value= 0>
-<label for = speed>Parameter r:</label>
-<input id = 'param' type="number" name="param" value= 0.25>
-<input type="button" id = "showGraph" name="showGraph" value="GRAFUJ!">
+<?php if (isset($aeroplane_heading)) echo "<h3> <img src=\"https://www.gnu.org/software/octave/img/octave-logo.svg\"
+             style=\"width: 32px; height: auto\" alt=\"GNU Octave logo\">".$aeroplane_heading."</h3>"; ?>
+<input style="display: none" id = 'speed' type="number" name="speed" value= 0>
+<form class="mt-5 col-lg-12 d-flex justify-content-center">
+    <div class="col-lg-5">
+        <div class="form-group">
+            <label for="param"><?php if (isset($aeroplane_input_text)) echo $aeroplane_input_text ?></label>
+            <input class="form-control" type="number" name="param" id="param" max="100" min="0" value="50">
+        </div>
+        <button id="showGraph" type="button"
+                class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button ?></button>
+    </div>
+</form>
+<div class="col-lg-12 form-row justify-content-center mt-4">
+    <div class="form-group">
+        <label for="animation mr-5"><?php echo $animation_checkbox_text ?></label>
+        <input class="form-control" type="checkbox" id="animation_checkbox" name="animation">
+    </div>
+    <div class="form-group ml-5">
+        <label for="graph_checkbox"><?php echo $graph_checkbox_text ?></label>
+        <input class="form-control" type="checkbox" id="graph_checkbox" name="graph">
+    </div>
+</div>
+
 <script>
     let initQ = 0;
     let initTheta = 0;
