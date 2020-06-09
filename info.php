@@ -122,16 +122,26 @@ $_SESSION['current_page'] = 'info.php';
 </div>
 
 <div class="statistic_info">
-    <form class="mt-5 col-lg-12 d-flex justify-content-center">
+    <form class="mt-5 col-lg-12 d-flex justify-content-center" action="info.php" method="post">
         <div class="col-lg-5">
             <div class="form-group">
-                <label for="email">E-mail</label>
+                <label for="email"><?php if (isset($email)) echo $email; ?></label>
                 <input class="form-control" type="email" name="eMail" id="eMail">
             </div>
-            <button id="submit" type="button" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button?></button>
+            <input id="submit" name="submit" type="submit" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button?></input>
         </div>
     </form>
 </div>
 
 </body>
 </html>
+<?php
+if(isset($_POST['submit']))
+{
+    $emailUser = $_POST['eMail'];
+   // echo $emailUser;
+    $message = "hello";
+    $subject = "Statistics";
+    mail($emailUser,$subject,$message);
+}
+?>

@@ -183,6 +183,6 @@ if ($_COOKIE['lang'] == 'EN') {
     $ball_heading = "GULIČKA NA TYČI";
 
     //Email
-    $email = "Enter your E-mail so we could send you info about statistics";
+    $email = "Zadaj E-mail a my ti pošleme info o štatistike";
 
 }
