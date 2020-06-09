@@ -32,7 +32,7 @@ $_SESSION['current_page'] = 'aeroplane.php';
         document.getElementById("showGraph").disabled = true;
         var param = document.getElementById('param').value;
         var parameterURL = encodeURIComponent(param + ";initQ=" + initQ + ";initTheta=" + initTheta + ";");
-        var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=kyvadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
+        var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=lietadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
         $.getJSON(url, function(data){
             initTheta = data.data[0].x[(data.data[0].x.length)-1];
             initQ = data.data[0].y[(data.data[0].y.length)-1];

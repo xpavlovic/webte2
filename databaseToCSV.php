@@ -19,7 +19,7 @@ if (isset($_POST['export'])) {
     $output = fopen("php://output", "w");
     fputcsv($output, array('ID', 'Date', 'Request', 'Is Error', 'Error Description'));
 
-    while ($row = $stmt->fetch(PDO::FETCH_OBJ))
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     {
         fputcsv($output, $row);
     }
