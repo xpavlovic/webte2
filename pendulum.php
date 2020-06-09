@@ -32,12 +32,6 @@ $_SESSION['current_page'] = 'pendulum.php';
 <form class="mt-5 col-lg-12 d-flex justify-content-center">
     <div class="col-lg-5">
         <div class="form-group">
-
-            <label for="apiKey"><?php if (isset($api_key_text)) echo $api_key_text ?></label>
-            <input class="form-control" type="text" name="apiKey" id="apiKey"
-                   value="99cf0f8b-8b17-4a1b-93e7-be2efaec965e">
-        </div>
-        <div class="form-group">
             <label for="param"><?php if (isset($pendulum_input_text)) echo $pendulum_input_text ?></label>
             <input class="form-control" type="number" name="param" id="param" max="100" min="0" value="50">
         </div>
@@ -106,17 +100,25 @@ $_SESSION['current_page'] = 'pendulum.php';
     let pendulum = document.getElementById('pendulum');
     let rod = document.getElementById('rod');
     let initUhol = 0;
-    let initPozicia = 0;
+    let initPozicia = 50;
+    let offset = 0;
 
     $(document).ready(
         function () {
             $("#showGraph").click(function () {
                 document.getElementById("showGraph").disabled = true;
                 var param = document.getElementById('param').value;
+                if (param>100){
+                    param = 100;
+                }
+                if (param<0){
+                    param =0;
+                }
                 var parameterURL = encodeURIComponent(param + ";initUhol=" + initUhol + ";initPozicia=" + initPozicia + ";");
                 var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=kyvadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
                 $.getJSON(url, function (data) {
                     displayGraph(data.data);
+                    animate_pendulum(data.data);
                     initUhol = data.data[0].x[(data.data[0].x.length)-1];
                     initPozicia = data.data[0].y[(data.data[0].y.length)-1];
                 });
@@ -140,8 +142,20 @@ $_SESSION['current_page'] = 'pendulum.php';
     );
 
     function move_pendulum(position, angle) {
-        let rotation = -parseFloat(angle) + 180;
-        rod.setAttribute('transform', 'rotate(' + rotation + ' 727 379.3)');
+        let degree_angle = angle * (180/Math.PI);
+        let rotation = parseFloat(degree_angle);
+        offset = 11*(position- 50);
+        rod.setAttribute('transform', 'rotate(' + rotation + ' 600.3 189.7)');
+        pendulum.setAttribute('transform', 'translate('+offset+' 0)');
+    }
+
+    async function animate_pendulum(data) {
+        var speed = Number(document.getElementById("speed").value);
+        for (var i = 0; i < data[0].x.length; i++) {
+            move_pendulum(data[0].y[i],data[0].x[i]);
+
+            await sleep(speed * 100);
+        }
     }
 </script>
 </body>
