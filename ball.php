@@ -19,6 +19,7 @@ $_SESSION['current_page'] = 'ball.php';
     <script src="script.js" defer></script>
     <script src="fabric.min.js"></script>
     <script src="matter.js"></script>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <?php include 'navbar.php'?>
