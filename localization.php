@@ -201,7 +201,7 @@ if ($_COOKIE['lang'] == 'EN') {
 
     //kyvadlo
     $pendulum_input_text = "Vstup (nová pozícia kyvadla v rozsahu 0-100)";
-    $aeroplane_input_text = "Vstup (nový náklon litadla)";
+    $aeroplane_input_text = "Vstup (nový náklon lietadla)";
     $ball_input_text = "Vstup (nová poloha guličky na tyči v rozsahu)";
     $dampening_input_text = "Vstup (nová výška skokovej prekážky)";
 
