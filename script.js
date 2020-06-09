@@ -1,10 +1,9 @@
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function displayGraph(data) {
-    var speed = Number(document.getElementById("speed").value);
+    let speed = 0;
     var currentData = {x: [], y: [], t: []};
     var maxT = data[0].t[data[0].t.length - 1];
 
@@ -39,17 +38,6 @@ function drawGraph(data,maxT,xVals,yVals)
 $(document).ready(
     function()
     {
-        $("#showGraphBall").click(
-            function() {
-
-                document.getElementById("showGraphBall").disabled = true;
-                var param = document.getElementById('param').value;
-                var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=gulicka&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + param;
-                $.getJSON(url, function(data){
-                    displayGraph(data.data);
-                });
-            });
-
         $("#submit").click(
             function() {
                 var input = encodeURIComponent(document.getElementById("inputName").value);
@@ -79,15 +67,15 @@ $(document).ready(
                     $('#graph').hide();
                 }
             });
+        $('#playground_cb').change(
+            function () {
+                if ($(this).is(':checked')){
+                    $('#playground').show();
+                }
+                else {
+                    $('#playground').hide();
+                }
+            });
 
     },
 );
-
-let ball = document.getElementById('ball');
-let beam = document.getElementById('beam');
-let lever = document.getElementById('lever');
-
-function move_ball(position,angle) {
-    let rotation = -parseFloat(angle) + 180;
-    ball.setAttribute('transform','rotate('+rotation+' 727 379.3)');
-}
