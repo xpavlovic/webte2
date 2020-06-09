@@ -1,7 +1,30 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include 'localization.php';
 include 'config.php';
 $_SESSION['current_page'] = 'info.php';
+$mysql = new mysqli($servername, $username, $password,$dbname);
+
+function most_used_script($mysql)
+{
+
+    $query = "SELECT kyvadlo,lietadlo,gulicka,tlmenie FROM stats WHERE ID = 1";
+    $result = mysqli_query($mysql, $query);
+    $values = $result->fetch_assoc();
+    $max_name = "";
+    $max_value = 0;
+    foreach ($values as $script_name => $value)
+    {
+        if ($max_value < $value)
+        {
+            $max_value = $value;
+            $max_name = $script_name;
+        }
+    }
+    return $max_name . " a počet použití je: " . $max_value;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +41,7 @@ $_SESSION['current_page'] = 'info.php';
 </head>
 <body>
 <?php include 'navbar.php'?>
+
 <div class="about p-3"><?php if (isset($api_info)) echo $api_info; ?>
     <div class="textI">
         <div class ="v move">
@@ -54,6 +78,7 @@ $_SESSION['current_page'] = 'info.php';
 
     </div>
 </div>
+
 <div class="moveBtns">
 <form method="post" action="pdf.php" class="p-3">
     <input type="submit" name="export" value="<?php if (isset($pdf_text)) echo $pdf_text; ?>" class="btn btn-dark" />
@@ -122,13 +147,17 @@ $_SESSION['current_page'] = 'info.php';
 </div>
 
 <div class="statistic_info">
+    <h3>Štatisktika</h3>
+    <div class="center">
+        <div> Skript, ktorý bol najviacej používaný je <?php echo "<b>".most_used_script($mysql)."</b>"; ?></div>
+    </div>
     <form class="mt-5 col-lg-12 d-flex justify-content-center" action="info.php" method="post">
         <div class="col-lg-5">
             <div class="form-group">
                 <label for="email"><?php if (isset($email)) echo $email; ?></label>
                 <input class="form-control" type="email" name="eMail" id="eMail">
             </div>
-            <input id="submit" name="submit" type="submit" class="btn btn-secondary float-right"><?php if (isset($submit_button)) echo $submit_button?></input>
+            <input id="submit" name="submit" type="submit" class="btn btn-secondary float-right">
         </div>
     </form>
 </div>
@@ -140,8 +169,8 @@ if(isset($_POST['submit']))
 {
     $emailUser = $_POST['eMail'];
    // echo $emailUser;
-    $message = "hello";
+    $message = most_used_script($mysql);
     $subject = "Statistics";
-    mail($emailUser,$subject,$message);
+    //mail($emailUser,$subject,$message);
 }
 ?>

@@ -20,7 +20,8 @@ $_SESSION['current_page'] = 'dampening.php';
 </head>
 <body>
 <?php include 'navbar.php'?>
-<?php if (isset($dampening_heading)) echo "<h3>".$dampening_heading."</h3>"; ?>
+<?php if (isset($dampening_heading)) echo "<h3> <img src=\"https://www.gnu.org/software/octave/img/octave-logo.svg\"
+             style=\"width: 32px; height: auto\" alt=\"GNU Octave logo\">".$dampening_heading."</h3>"; ?>
 <script>
     function change_language(language) {
         document.cookie = "lang="+language;
@@ -29,10 +30,6 @@ $_SESSION['current_page'] = 'dampening.php';
 </script>
 <form class="mt-5 col-lg-12 d-flex justify-content-center">
     <div class="col-lg-5">
-        <div class="form-group">
-            <label for="apiKey"><?php if (isset($api_key_text)) echo $api_key_text; ?></label>
-            <input class="form-control" type="text" name="apiKey" id="apiKey" value="99cf0f8b-8b17-4a1b-93e7-be2efaec965e">
-        </div>
         <div class="form-group">
             <label for = speed style="display: none">Rychlosť zobrazovania grafu:</label>
             <input id ='speed' type="number" name="speed" value= 0 style="display: none">
