@@ -108,31 +108,31 @@ function most_used_script($mysql)
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td>Inštalacia Octave na server</td>
+                <td><?php if (isset($info_octave_installation_text)) echo $info_octave_installation_text; ?></td>
                 <td>API</td>
-                <td>Dvojjazyčnosť webstránky</td>
-                <td>Štruktúra a dvojjazyčnosť webstránky</td>
+                <td><?php if (isset($info_multilingual_text)) echo $info_multilingual_text; ?></td>
+                <td><?php if (isset($info_structure_multilingual_text)) echo $info_structure_multilingual_text; ?></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
                 <td>API</td>
-                <td>Grafy</td>
-                <td>Export do CSV a PDF</td>
-                <td>API kľúč</td>
+                <td><?php if (isset($info_graphs_text)) echo $info_graphs_text; ?></td>
+                <td><?php if (isset($info_csv_pdf_export_text)) echo $info_csv_pdf_export_text; ?></td>
+                <td><?php if (isset($api_key_text)) echo $api_key_text; ?></td>
             </tr>
             <tr>
                 <th scope="row">3</th>
-                <td>API popis</td>
-                <td>Ukladanie požiadaviek z Octave do DB</td>
-                <td>Preklad a exportovanie API popisu do PDF</td>
-                <td>DB pre logovanie požiadaviek z Octave</td>
+                <td><?php if (isset($info_api_description_text)) echo $info_api_description_text; ?></td>
+                <td><?php if (isset($info_request_saving_text)) echo $info_request_saving_text; ?></td>
+                <td><?php if (isset($info_translation_export_text)) echo $info_translation_export_text; ?></td>
+                <td><?php if (isset($info_log_db_text)) echo $info_log_db_text; ?></td>
             </tr>
             <tr>
                 <th scope="row">4</th>
-                <td>Tabuľka úloh</td>
-                <td>Štatistika pre individualne úlohy</td>
-                <td>Vylepšenie webstránky</td>
-                <td>Formulár na úvodnej stránky a vylepšenie API</td>
+                <td><?php if (isset($info_task_table_text)) echo $info_task_table_text; ?></td>
+                <td><?php if (isset($info_task_statistic_text)) echo $info_task_statistic_text; ?></td>
+                <td><?php if (isset($info_website_upgrade_text)) echo $info_website_upgrade_text; ?></td>
+                <td><?php if (isset($info_index_form_text)) echo $info_index_form_text; ?></td>
             </tr>
             <tr>
                 <th scope="row">4</th>
@@ -147,9 +147,9 @@ function most_used_script($mysql)
 </div>
 
 <div class="statistic_info">
-    <h3>Štatisktika</h3>
+    <h3><?php if (isset($info_statistic_text)) echo $info_statistic_text; ?></h3>
     <div class="center">
-        <div> Skript, ktorý bol najviacej používaný je <?php echo "<b>".most_used_script($mysql)."</b>"; ?></div>
+        <div> <?php if (isset($info_most_used_script_text)) echo $info_most_used_script_text; ?><?php echo "<b>".most_used_script($mysql)."</b>"; ?></div>
     </div>
     <form class="mt-5 col-lg-12 d-flex justify-content-center" action="info.php" method="post">
         <div class="col-lg-5">

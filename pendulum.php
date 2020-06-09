@@ -29,11 +29,6 @@ $_SESSION['current_page'] = 'pendulum.php';
 <?php include 'navbar.php' ?>
 <?php if (isset($pendulum_heading)) echo "<h3> <img src=\"https://www.gnu.org/software/octave/img/octave-logo.svg\"
              style=\"width: 32px; height: auto\" alt=\"GNU Octave logo\">".$pendulum_heading."</h3>"; ?>
-<input style="display: none" id='speed' type="number" name="speed" value=0>
-
-<script>
-
-</script>
 <form class="mt-5 col-lg-12 d-flex justify-content-center">
     <div class="col-lg-5">
         <div class="form-group">
@@ -122,7 +117,7 @@ $_SESSION['current_page'] = 'pendulum.php';
                 var parameterURL = encodeURIComponent(param + ";initUhol=" + initUhol + ";initPozicia=" + initPozicia + ";");
                 var url = "https://147.175.121.210:4629/final_p/api/scripts?scripts=kyvadlo&key=99cf0f8b-8b17-4a1b-93e7-be2efaec965e&parameter=" + parameterURL;
                 $.getJSON(url, function (data) {
-                    displayGraph(data.data);
+                    displayGraphPendulum(data.data);
                     animate_pendulum(data.data);
                     initUhol = data.data[0].x[(data.data[0].x.length)-1];
                     initPozicia = data.data[0].y[(data.data[0].y.length)-1];
@@ -155,12 +150,50 @@ $_SESSION['current_page'] = 'pendulum.php';
     }
 
     async function animate_pendulum(data) {
-        var speed = Number(document.getElementById("speed").value);
+        var speed = 0;
         for (var i = 0; i < data[0].x.length; i++) {
             move_pendulum(data[0].y[i],data[0].x[i]);
-
             await sleep(speed * 100);
         }
+    }
+
+    function drawGraphPendulum(data,maxT,xVals,yVals)
+    {
+        var graph1 = { x: data.t, y: data.x, type: 'scatter', name: 'Angle', line: {color: '#b3a50e', width: 3 } };
+        var graph2 = { x: data.t, y: data.y, xaxis: 'x2', yaxis: 'y2', type: 'scatter', name: 'Position', line: {color: 'gray', width: 3 }  };
+        var layoutGraph = {
+            xaxis: {range : [0,maxT]},
+            yaxis: {range: [xVals.min - 0.1 ,xVals.max * 1.1]},
+            xaxis2: {range : [0,maxT]},
+            yaxis2: {range: [yVals.min - 0.1 ,yVals.max * 1.1], anchor: 'x2'},
+            grid: {rows: 1, columns: 2, pattern: 'independent'},
+            margin: {l : 150, r: 200}
+        };
+        var drawGraph = [graph1,graph2];
+        Plotly.newPlot('graph',drawGraph,layoutGraph);
+    }
+
+    async function displayGraphPendulum(data) {
+        var speed = 0;
+        var currentData = {x: [], y: [], t: []};
+        var maxT = data[0].t[data[0].t.length - 1];
+
+        yVals = {min: Math.min.apply(Math,data[0].y), max: Math.max.apply(Math,data[0].y)};
+        xVals = {min: Math.min.apply(Math,data[0].x), max: Math.max.apply(Math,data[0].x)};
+
+        for (var i = 0; i < data[0].x.length; i++) {
+            currentData.x[i] = data[0].x[i];
+            currentData.y[i] = data[0].y[i];
+            currentData.t[i] = data[0].t[i];
+            drawGraphPendulum(currentData, maxT, xVals, yVals);
+            await sleep(speed * 100);
+        }
+        document.getElementById("showGraph").disabled = false;
+    }
+    function animateWithData(elevatorAngle,planeAngle)
+    {
+        //Toto tu bi nemalo bit ale bi aj malo :DD
+        //Pls do not remove this function
     }
 </script>
 </body>

@@ -32,7 +32,10 @@ h3{
     margin-left: auto;
     margin-right: auto;
 }
-
+.hiddenImg
+{
+   display: none;
+}
 .movefckinTable
 {
     margin-left: 20%;
@@ -63,5 +66,10 @@ h3{
 .statistic_info
 {
     margin-bottom: 5%;
+}
+
+.canvas-container
+{
+    margin: 0 auto;
 }
 

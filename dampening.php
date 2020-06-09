@@ -83,7 +83,7 @@ $_SESSION['current_page'] = 'dampening.php';
                 <circle class="st2" cx="670.1" cy="320.7" r="30" id="wheel2"></circle>
 
             </g>
-           <!-- <rect y="350" class="st3" width="1402" height="26"></rect>-->
+
     </svg>
     </div>
 </div>
@@ -133,6 +133,7 @@ $_SESSION['current_page'] = 'dampening.php';
         });
 
 
+
     function move_dampening(positionCar, positionWheel) {
         let degree_angle = positionWheel * (180/Math.PI);
         let rotation = parseFloat(degree_angle);
@@ -152,8 +153,13 @@ $_SESSION['current_page'] = 'dampening.php';
             move_dampening(data[0].y[i],data[0].x[i]);
 
             await sleep(speed * 100);
-        }
+        }}
 
+
+    function animateWithData(elevatorAngle,planeAngle)
+    {
+        //Toto tu bi nemalo bit ale bi aj malo :DD
+        //Pls do not remove this function
     }
 </script>
 
