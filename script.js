@@ -8,8 +8,8 @@ async function displayGraph(data) {
     var currentData = {x: [], y: [], t: []};
     var maxT = data[0].t[data[0].t.length - 1];
 
-    let yVals = {min: Math.min.apply(Math, data[1].y), max: Math.max.apply(Math, data[1].y)};
-    let xVals = {min: Math.min.apply(Math, data[1].x), max: Math.max.apply(Math, data[1].x)};
+    yVals = {min: Math.min.apply(Math,data[0].y), max: Math.max.apply(Math,data[0].y)};
+    xVals = {min: Math.min.apply(Math,data[0].x), max: Math.max.apply(Math,data[0].x)};
 
     for (var i = 0; i < data[0].x.length; i++) {
         currentData.x[i] = data[0].x[i];
