@@ -11,10 +11,12 @@ $_SESSION['current_page'] = 'aeroplane.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php if (isset($title_text)) echo $title_text; ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="fabric.min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -40,6 +42,36 @@ $_SESSION['current_page'] = 'aeroplane.php';
         });
     });
 </script>
+<canvas id = "plane"></canvas>
 <div id = 'graph'></div>
+<img src="plane.png" class = "hiddenImg" id = 'planeImg'>
+<img src="elevator.png" class = "hiddenImg" id = 'elevatorImg'>
+<script>
+
+    var canvas = new fabric.Canvas('plane');
+    canvas.setHeight(450);
+    canvas.setWidth(900);
+
+    var plane = document.getElementById("planeImg");
+    plane = new fabric.Image(plane,{left: 300,  top: 200});
+    plane.scaleToHeight(200);
+    plane.scaleToWidth(400);
+
+    var elevator = document.getElementById("elevatorImg");
+    elevator = new fabric.Image(elevator, {left: 320 ,top: 243});
+    elevator.scaleToHeight(90);
+    var group = new fabric.Group([plane,elevator],{ selectable: false});
+    canvas.add(group).renderAll();
+
+    var  objs = canvas.getObjects();
+    var planeObj= objs[0];
+    var elevatorObj = objs[0].item(1);
+    canvas.renderAll();
+    function drawPlaneWithData(elevatorAngle,planeAngle)
+    {
+        planeObj.rotate(-1 * (planeAngle));
+        elevatorObj.rotate(-1 * elevatorAngle);
+    }
+</script>
 </body>
 </html>

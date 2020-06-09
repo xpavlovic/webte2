@@ -4,7 +4,7 @@ function sleep(ms) {
 }
 
 async function displayGraph(data) {
-    var speed = Number(document.getElementById("speed").value);
+    var speed = 0;
     var currentData = {x: [], y: [], t: []};
     var maxT = data[0].t[data[0].t.length - 1];
 
@@ -16,6 +16,7 @@ async function displayGraph(data) {
         currentData.y[i] = data[0].y[i];
         currentData.t[i] = data[0].t[i];
         drawGraph(currentData, maxT, xVals, yVals);
+        //drawPlaneWithData(data[0])
         await sleep(speed * 100);
     }
     document.getElementById("showGraph").disabled = false;
